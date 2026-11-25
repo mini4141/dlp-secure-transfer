@@ -1,0 +1,43 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="181.36411099999998">
+<testsuite name="journey.spec.ts" timestamp="2026-11-25T22:33:20.317Z" hostname="chromium" tests="1" failures="0" skipped="0" time="180.013" errors="1">
+<testcase name="sender -&gt; approver (redacted) -&gt; recipient download -&gt; limit -&gt; audit" classname="journey.spec.ts" time="180.013">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\..\e2e\test-results\journey-sender---approver--8c8d6-nt-download---limit---audit-chromium\error-context.md]]
+
+[[ATTACHMENT|..\..\..\..\e2e\test-results\journey-sender---approver--8c8d6-nt-download---limit---audit-chromium\trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 180000ms exceeded." type="Error">
+<![CDATA[  [chromium] › journey.spec.ts:43:1 › sender -> approver (redacted) -> recipient download -> limit -> audit 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.waitForURL: Test ended.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+    ============================================================
+
+      52 |   await shot(sam, "send");
+      53 |   await sam.click("#send-btn");
+    > 54 |   await sam.waitForURL(/\/transfers\/\d+$/);
+         |             ^
+      55 |   const transferId = sam.url().split("/").pop()!;
+      56 |   await shot(sam, "scanning");
+      57 |
+        at C:\Users\ThinkPad\Pictures\mmvie-v2\reqs\6-dlp-secure-transfer\e2e\tests\journey.spec.ts:54:13
+
+    Error Context: ..\test-results\journey-sender---approver--8c8d6-nt-download---limit---audit-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\journey-sender---approver--8c8d6-nt-download---limit---audit-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\journey-sender---approver--8c8d6-nt-download---limit---audit-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>

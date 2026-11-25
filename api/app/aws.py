@@ -16,12 +16,16 @@ tracer = trace.get_tracer("dlp-api")
 
 def _client(service: str, endpoint: str | None):
     s = get_settings()
-    cfg = Config(
-        signature_version="s3v4" if service == "s3" else None,
-        s3={"addressing_style": "path" if endpoint else "auto"} if service == "s3" else None,
-        region_name=s.aws_region,
-    )
-    return boto3.client(service, region_name=s.aws_region, endpoint_url=endpoint, config=cfg)
+    kwargs: dict = {"region_name": s.aws_region}
+    if service == "s3":
+        # In AWS use the regional endpoint with virtual-hosted style: the global endpoint answers 307 for new
+        # buckets, which browsers cannot follow for a cross-origin presigned PUT.
+        endpoint = endpoint or f"https://s3.{s.aws_region}.amazonaws.com"
+        kwargs["config"] = Config(
+            signature_version="s3v4",
+            s3={"addressing_style": "path" if get_settings().aws_endpoint_url else "virtual"},
+        )
+    return boto3.client(service, endpoint_url=endpoint, **kwargs)
 
 
 @lru_cache
