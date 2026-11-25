@@ -16,3 +16,8 @@ One line each: date, decision, reason.
 - 2026-11-26: Link download counter counts every file download (not whole transfers). Reason: simplest reading of "download limit".
 - 2026-11-26: Worker builds with Go 1.26 (`golang:1.26-alpine`), not 1.25: current releases of otel/prometheus/aws-sdk require go >= 1.26. Reason: latest deps; pinning old ones is worse.
 - 2026-11-26: Local compose publishes on non-default host ports (postgres 15432, moto 15000, api 18000, worker 19090, jaeger UI 26686). Reason: another stack on this PC already owns 5432/9090/16686/4318; mine must not collide with or touch it.
+- 2026-11-26: RDS connections use `ssl=require` (encrypted, certificate not verified) via asyncpg. Reason: RDS PostgreSQL 17 forces SSL; CA bundle handling is out of scope for the showcase.
+- 2026-11-26: EKS 1.36 on `AL2023_x86_64_STANDARD`, RDS PostgreSQL 17.12 (17.6 used locally is not offered by RDS). Reason: versions available in ap-southeast-2 on 2026-11-26.
+- 2026-11-26: Cloud login password for the three demo users is random per deployment (`.local/cloud-secrets.env`, gitignored), not the local `demo-password`. Reason: the NLB endpoint is public.
+- 2026-11-26: API image is multi-stage (uv only in the build stage); worker image runs `apk upgrade`. Reason: Trivy flagged uv 0.10.3 (CRITICAL) and alpine openssl; `golang.org/x/net` bumped to 0.63.
+- 2026-11-26: Scripts convert the repo root with `cygpath -m` before passing absolute paths to native Windows tools (uv, node, kubectl). Reason: `MSYS_NO_PATHCONV=1` leaves `/c/...` paths unresolvable for them.
