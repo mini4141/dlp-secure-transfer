@@ -93,4 +93,19 @@ resource "aws_eks_addon" "pod_identity" {
   depends_on   = [aws_eks_node_group.main]
 }
 
-# The deployer user created the cluster and is its admin (bootstrap_cluster_creator_admin_permissions).
+
+# The Terraform caller (the deployer user) administers the cluster: kubectl, ArgoCD install, destroy-time cleanup.
+resource "aws_eks_access_entry" "deployer" {
+  cluster_name  = aws_eks_cluster.main.name
+  principal_arn = data.aws_caller_identity.current.arn
+  type          = "STANDARD"
+}
+
+resource "aws_eks_access_policy_association" "deployer" {
+  cluster_name  = aws_eks_cluster.main.name
+  principal_arn = aws_eks_access_entry.deployer.principal_arn
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+  access_scope {
+    type = "cluster"
+  }
+}
