@@ -1,0 +1,18 @@
+{
+    "associations": [
+        {
+            "clusterName": "dlp-secure-transfer",
+            "namespace": "dlp",
+            "serviceAccount": "dlp-secure-transfer-api",
+            "associationArn": "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-x1lnycvqgmn8watvu",
+            "associationId": "a-x1lnycvqgmn8watvu"
+        },
+        {
+            "clusterName": "dlp-secure-transfer",
+            "namespace": "dlp",
+            "serviceAccount": "dlp-secure-transfer-worker",
+            "associationArn": "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-xb6bp3z3bykvlsabh",
+            "associationId": "a-xb6bp3z3bykvlsabh"
+        }
+    ]
+}

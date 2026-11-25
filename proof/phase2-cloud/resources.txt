@@ -1,0 +1,36 @@
+# Deployed AWS resources (Terraform outputs and tag-based inventory), account ids redacted
+region: ap-southeast-2
+cluster: dlp-secure-transfer
+ecr_api: <ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/api
+ecr_worker: <ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/worker
+bucket: dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2
+queue: dlp-secure-transfer-scan
+dlq: https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq
+rds: dlp-secure-transfer.c3qm82siib5v.ap-southeast-2.rds.amazonaws.com
+kms: arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d
+
+# resourcegroupstaggingapi Project=dlp-secure-transfer
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:internet-gateway/igw-<ACCOUNT_ID>ca47e
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:route-table/rtb-0ed3425f0c7699f8f
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:security-group-rule/sgr-0b5ee2bd2ef088241
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:security-group/sg-06b1569bbd7b63e3d
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:security-group/sg-07b5d9987bc57561a
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:subnet/subnet-012d<ACCOUNT_ID>9
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:subnet/subnet-0175acb8782aa3e39
+arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:vpc/vpc-084b975c4096e2447
+arn:aws:ecr:ap-southeast-2:<ACCOUNT_ID>:repository/dlp-secure-transfer/api
+arn:aws:ecr:ap-southeast-2:<ACCOUNT_ID>:repository/dlp-secure-transfer/worker
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:access-entry/dlp-secure-transfer/user/<ACCOUNT_ID>/dlp-secure-transfer-deployer/f0d10a5e-fb26-9404-1963-9b57dd9cd978
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:addon/dlp-secure-transfer/eks-pod-identity-agent/d0d10a58-da73-2195-91cf-5d7d324028a3
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:cluster/dlp-secure-transfer
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:nodegroup/dlp-secure-transfer/spot/ced10a57-d14e-e583-e2ce-2e305f3c65de
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-x1lnycvqgmn8watvu
+arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-xb6bp3z3bykvlsabh
+arn:aws:elasticloadbalancing:ap-southeast-2:<ACCOUNT_ID>:loadbalancer/a2466a08553ce4b88902346d0101a7bd
+arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d
+arn:aws:logs:ap-southeast-2:<ACCOUNT_ID>:log-group:/aws/eks/dlp-secure-transfer/cluster
+arn:aws:rds:ap-southeast-2:<ACCOUNT_ID>:db:dlp-secure-transfer
+arn:aws:rds:ap-southeast-2:<ACCOUNT_ID>:subgrp:dlp-secure-transfer
+arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2
+arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan
+arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan-dlq

@@ -1,14 +1,14 @@
 random_password.db: Refreshing state... [id=none]
-data.aws_iam_policy_document.eks_assume: Reading...
-data.aws_iam_policy_document.node_assume: Reading...
 data.aws_caller_identity.current: Reading...
-data.aws_iam_policy_document.pods_assume: Reading...
-data.aws_availability_zones.available: Reading...
-aws_ecr_repository.repo["api"]: Refreshing state... [id=dlp-secure-transfer/api]
-aws_ecr_repository.repo["worker"]: Refreshing state... [id=dlp-secure-transfer/worker]
-aws_cloudwatch_log_group.eks: Refreshing state... [id=/aws/eks/dlp-secure-transfer/cluster]
 aws_kms_key.main: Refreshing state... [id=b33611c2-0de2-44b0-b017-45eb01546e0d]
+data.aws_availability_zones.available: Reading...
+data.aws_iam_policy_document.node_assume: Reading...
+data.aws_iam_policy_document.pods_assume: Reading...
+data.aws_iam_policy_document.eks_assume: Reading...
+aws_cloudwatch_log_group.eks: Refreshing state... [id=/aws/eks/dlp-secure-transfer/cluster]
+aws_ecr_repository.repo["worker"]: Refreshing state... [id=dlp-secure-transfer/worker]
 aws_vpc.main: Refreshing state... [id=vpc-084b975c4096e2447]
+aws_ecr_repository.repo["api"]: Refreshing state... [id=dlp-secure-transfer/api]
 data.aws_iam_policy_document.eks_assume: Read complete after 0s [id=3552664922]
 data.aws_iam_policy_document.node_assume: Read complete after 0s [id=2851119427]
 data.aws_iam_policy_document.pods_assume: Read complete after 0s [id=819195744]
@@ -17,45 +17,45 @@ aws_iam_role.node: Refreshing state... [id=dlp-secure-transfer-eks-node]
 data.aws_caller_identity.current: Read complete after 0s [id=<ACCOUNT_ID>]
 aws_s3_bucket.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
 data.aws_availability_zones.available: Read complete after 2s [id=ap-southeast-2]
-aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
-aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
-aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
 aws_iam_role_policy_attachment.cluster: Refreshing state... [id=dlp-secure-transfer-eks-cluster/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
 aws_kms_alias.main: Refreshing state... [id=alias/dlp-secure-transfer]
 aws_sqs_queue.dlq: Refreshing state... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq]
-aws_sqs_queue.scan: Refreshing state... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan]
 aws_internet_gateway.main: Refreshing state... [id=igw-<ACCOUNT_ID>ca47e]
-aws_subnet.public[1]: Refreshing state... [id=subnet-0175acb8782aa3e39]
 aws_security_group.db: Refreshing state... [id=sg-06b1569bbd7b63e3d]
+aws_subnet.public[1]: Refreshing state... [id=subnet-0175acb8782aa3e39]
 aws_subnet.public[0]: Refreshing state... [id=subnet-012d<ACCOUNT_ID>9]
+aws_sqs_queue.scan: Refreshing state... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan]
 aws_route_table.public: Refreshing state... [id=rtb-0ed3425f0c7699f8f]
 aws_db_subnet_group.main: Refreshing state... [id=dlp-secure-transfer]
 aws_eks_cluster.main: Refreshing state... [id=dlp-secure-transfer]
-aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-05efab35e19a54a17]
-aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0973f2029613c9f94]
 aws_s3_bucket_public_access_block.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
-data.aws_iam_policy_document.bucket_tls_only: Reading...
 aws_s3_bucket_versioning.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
 aws_s3_bucket_server_side_encryption_configuration.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
 aws_s3_bucket_cors_configuration.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+data.aws_iam_policy_document.bucket_tls_only: Reading...
 data.aws_iam_policy_document.workload["api"]: Reading...
+data.aws_iam_policy_document.workload["worker"]: Reading...
 data.aws_iam_policy_document.bucket_tls_only: Read complete after 0s [id=2765809922]
 data.aws_iam_policy_document.workload["api"]: Read complete after 0s [id=2693662652]
+data.aws_iam_policy_document.workload["worker"]: Read complete after 0s [id=4186138049]
 aws_iam_role.workload["worker"]: Refreshing state... [id=dlp-secure-transfer-worker]
 aws_iam_role.workload["api"]: Refreshing state... [id=dlp-secure-transfer-api]
-data.aws_iam_policy_document.workload["worker"]: Reading...
-data.aws_iam_policy_document.workload["worker"]: Read complete after 0s [id=4186138049]
 aws_s3_bucket_policy.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0973f2029613c9f94]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-05efab35e19a54a17]
+aws_iam_role_policy.workload["api"]: Refreshing state... [id=dlp-secure-transfer-api:access]
+aws_iam_role_policy.workload["worker"]: Refreshing state... [id=dlp-secure-transfer-worker:access]
 aws_eks_access_entry.deployer: Refreshing state... [id=dlp-secure-transfer:arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer]
 aws_vpc_security_group_ingress_rule.db_from_eks: Refreshing state... [id=sgr-0b5ee2bd2ef088241]
 aws_eks_node_group.main: Refreshing state... [id=dlp-secure-transfer:spot]
-aws_iam_role_policy.workload["api"]: Refreshing state... [id=dlp-secure-transfer-api:access]
-aws_iam_role_policy.workload["worker"]: Refreshing state... [id=dlp-secure-transfer-worker:access]
 aws_eks_addon.pod_identity: Refreshing state... [id=dlp-secure-transfer:eks-pod-identity-agent]
 aws_eks_access_policy_association.deployer: Refreshing state... [id=dlp-secure-transfer#arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+aws_db_instance.main: Refreshing state... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4]
 aws_eks_pod_identity_association.workload["worker"]: Refreshing state... [id=a-xb6bp3z3bykvlsabh]
 aws_eks_pod_identity_association.workload["api"]: Refreshing state... [id=a-x1lnycvqgmn8watvu]
-aws_db_instance.main: Refreshing state... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4]
 
 No changes. Your infrastructure matches the configuration.
 

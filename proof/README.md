@@ -39,8 +39,22 @@ not by hand. Logs are redacted (12-digit account IDs, keys, tokens, passwords). 
 | `prometheus-metrics.txt` | `/metrics` of API (FastAPI instrumentator + `dlp_*` counters) and worker (`promhttp`) |
 | `api-structured.log`, `compose-ps.txt` | Structured API logs, compose service state |
 
-## Phase 2: AWS (`phase2-cloud/`)
-Filled in by `scripts/deploy.sh` (see `docs/PORTFOLIO.md`).
+## Phase 2: AWS (`phase2-cloud/`, deployed by `scripts/deploy.sh`, EKS 1.36 + RDS + S3/SQS/KMS)
+| File | Proves |
+|---|---|
+| `screenshots/01-eks-approval.png` | The Go worker running in EKS (real S3 + SQS through Pod Identity) found PII; approver sees obfuscated findings and the redacted preview |
+| `screenshots/02-eks-download.png` | Recipient download page on the public cloud endpoint |
+| `screenshots/03-eks-audit.png` | Audit log of the cloud run |
+| `screenshots/04-eks-argocd.png` | ArgoCD on EKS: app Synced + Healthy with 13 injected parameters (account-specific values never committed) |
+| `logs/terraform-apply.log` | Terraform apply of the whole stack (VPC, EKS, RDS, S3, SQS, KMS, ECR, Pod Identity roles) |
+| `logs/s3-head-object-sse.json`, `s3-head-object-redacted-sse.json` | Uploaded original and redacted copy are encrypted with `aws:kms` |
+| `logs/s3-bucket-encryption.json`, `s3-bucket-versioning.json`, `s3-public-access-block.json` | Bucket default SSE-KMS, versioning on, public access blocked |
+| `logs/sqs-attributes.json` | Scan queue: KMS-encrypted, redrive policy to the DLQ after 3 receives |
+| `logs/rds-describe.json` | RDS PostgreSQL 17 `db.t4g.micro`, single-AZ, encrypted, not publicly accessible |
+| `logs/eks-pod-identity-associations.json` | api and worker ServiceAccounts mapped to separate least-privilege roles |
+| `logs/kubectl-get-all.txt`, `worker-eks.log`, `api-eks.log` | Cluster state (2 nodes, 2 API replicas, worker) and structured logs |
+| `resources.txt` | Everything deployed, from Terraform outputs and the Project tag inventory |
+| `tests/playwright-eks/`, `tests/playwright-argocd/` | The sender -> approver -> recipient journey and ArgoCD check run against the cloud endpoints (JUnit) |
 
 ## Phase 3: destroy (`phase3-destroy/`)
-`verify-destroyed.txt` from `scripts/verify-destroyed.sh`.
+`terraform-destroy.log` from `scripts/destroy.sh`, `verify-destroyed.txt` from `scripts/verify-destroyed.sh`.

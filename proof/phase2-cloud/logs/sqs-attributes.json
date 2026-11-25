@@ -1,0 +1,25 @@
+{
+    "Attributes": {
+        "QueueArn": "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan",
+        "ApproximateNumberOfMessages": "0",
+        "ApproximateNumberOfMessagesNotVisible": "0",
+        "ApproximateNumberOfMessagesDelayed": "0",
+        "CreatedTimestamp": "1795642978",
+        "LastModifiedTimestamp": "1795642978",
+        "VisibilityTimeout": "30",
+        "MaximumMessageSize": "262144",
+        "MessageRetentionPeriod": "345600",
+        "DelaySeconds": "0",
+        "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan-dlq\",\"maxReceiveCount\":3}",
+        "ReceiveMessageWaitTimeSeconds": "10",
+        "KmsMasterKeyId": "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d",
+        "KmsDataKeyReusePeriodSeconds": "300",
+        "SqsManagedSseEnabled": "false"
+    }
+}
+{
+    "Attributes": {
+        "QueueArn": "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan-dlq",
+        "KmsMasterKeyId": "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d"
+    }
+}

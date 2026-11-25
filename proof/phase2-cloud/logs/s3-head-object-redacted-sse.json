@@ -1,0 +1,12 @@
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-11-25T22:41:11+00:00",
+    "ContentLength": 243,
+    "ETag": "\"612140456a8387951e4cd0a89af2e58b\"",
+    "VersionId": "DTeIV0l8cT89mDAlD_wjhHZo6YQUt0It",
+    "ContentType": "text/csv; charset=utf-8",
+    "ServerSideEncryption": "aws:kms",
+    "Metadata": {},
+    "SSEKMSKeyId": "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d",
+    "BucketKeyEnabled": true
+}

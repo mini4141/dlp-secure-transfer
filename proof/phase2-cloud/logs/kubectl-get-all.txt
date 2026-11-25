@@ -1,0 +1,36 @@
+NAME                                             STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                            CONTAINER-RUNTIME
+ip-10-20-0-58.ap-southeast-2.compute.internal    Ready    <none>   51m   v1.36.5-eks-9adbfea   10.20.0.58    13.238.184.173   Amazon Linux 2023.12.20261118   6.18.62-127.179.amzn2023.x86_64 (amd64)   containerd://2.3.7+unknown
+ip-10-20-1-155.ap-southeast-2.compute.internal   Ready    <none>   51m   v1.36.5-eks-9adbfea   10.20.1.155   32.236.49.140    Amazon Linux 2023.12.20261118   6.18.62-127.179.amzn2023.x86_64 (amd64)   containerd://2.3.7+unknown
+
+NAME                                            READY   STATUS      RESTARTS   AGE
+pod/dlp-secure-transfer-api-6df6f5c96c-5px5l    1/1     Running     0          2m5s
+pod/dlp-secure-transfer-api-6df6f5c96c-lwjgf    1/1     Running     0          118s
+pod/dlp-secure-transfer-migrate-chtw6           0/1     Completed   0          2m15s
+pod/dlp-secure-transfer-worker-f57fd8bc-8f5wh   1/1     Running     0          2m5s
+
+NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP                                                                   PORT(S)        AGE
+service/dlp-secure-transfer-api      LoadBalancer   172.20.227.143   a2466a08553ce4b88902346d0101a7bd-111061458.ap-southeast-2.elb.amazonaws.com   80:30723/TCP   29m
+service/dlp-secure-transfer-worker   ClusterIP      172.20.218.34    <none>                                                                        9090/TCP       29m
+
+NAME                                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/dlp-secure-transfer-api      2/2     2            2           29m
+deployment.apps/dlp-secure-transfer-worker   1/1     1            1           29m
+
+NAME                                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/dlp-secure-transfer-api-6df6f5c96c      2         2         2       2m7s
+replicaset.apps/dlp-secure-transfer-api-bf68b4fc        0         0         0       10m
+replicaset.apps/dlp-secure-transfer-api-c9dfd86cd       0         0         0       29m
+replicaset.apps/dlp-secure-transfer-worker-5ffc4d87f7   0         0         0       10m
+replicaset.apps/dlp-secure-transfer-worker-c54c48948    0         0         0       29m
+replicaset.apps/dlp-secure-transfer-worker-f57fd8bc     1         1         1       2m7s
+
+NAME                                    STATUS     COMPLETIONS   DURATION   AGE
+job.batch/dlp-secure-transfer-migrate   Complete   1/1           4s         2m19s
+
+NAME                                        AGE
+serviceaccount/default                      30m
+serviceaccount/dlp-secure-transfer-api      29m
+serviceaccount/dlp-secure-transfer-worker   29m
+
+NAME                  SYNC STATUS   HEALTH STATUS
+dlp-secure-transfer   Synced        Healthy

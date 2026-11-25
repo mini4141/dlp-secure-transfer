@@ -5,7 +5,7 @@ Resume from the first unticked item. Updated at the end of each step.
 ## Phases (CLAUDE.md §5)
 - [x] Phase 0: scaffold
 - [x] Phase 1: local (tests green, CI green, proof index complete)
-- [ ] Phase 2: AWS showcase
+- [x] Phase 2: AWS showcase
 - [ ] Phase 3: destroy + verify-destroyed
 - [ ] Phase 4: write-up (docs/PORTFOLIO.md)
 
@@ -14,8 +14,8 @@ Resume from the first unticked item. Updated at the end of each step.
 - [x] Scalable, fault-tolerant services: 2 API replicas, SQS + DLQ, worker retries, idempotent scans (drill log)
 - [x] Automate deployment/testing/monitoring/docs via CI/CD + IaC: GitHub Actions, Terraform, ArgoCD, OpenAPI docs (CI run, ArgoCD screenshot)
 - [x] Containers + orchestration: Helm chart, kind/EKS, ArgoCD (kubectl/argocd logs)
-- [ ] Terraform: `infra/` (apply logs)
-- [ ] Mission-critical AWS: S3 SSE-KMS, SQS DLQ, RDS, Pod Identity least privilege, private DB (resources.txt)
+- [x] Terraform: `infra/` (apply logs)
+- [x] Mission-critical AWS: S3 SSE-KMS, SQS DLQ, RDS, Pod Identity least privilege, private DB (resources.txt)
 - [x] Go: DLP worker (Go tests)
 - [x] Cloud security: PII obfuscation, redaction, presigned TTLs, Argon2, audit (tests + screenshots)
 - [x] Distributed systems / SaaS: API -> queue -> worker, RBAC (trace screenshot)
@@ -30,9 +30,9 @@ Resume from the first unticked item. Updated at the end of each step.
 
 ## Phase 2 checklist (SPECS §10)
 - [x] `aws sts get-caller-identity` OK
-- [ ] screenshots: 01-eks-approval, 02-eks-download, 03-eks-audit, 04-eks-argocd
-- [ ] logs: s3-head-object-sse.json (aws:kms), sqs-attributes.json, terraform-apply.log, resources.txt
-- [ ] tests/playwright-eks/
+- [x] screenshots: 01-eks-approval, 02-eks-download, 03-eks-audit, 04-eks-argocd
+- [x] logs: s3-head-object-sse.json (aws:kms), sqs-attributes.json, terraform-apply.log, resources.txt
+- [x] tests/playwright-eks/
 
 ## Phase 3 checklist (SPECS §11)
 - [ ] destroy.sh run (ArgoCD app + LB deleted, bucket emptied, terraform destroy)

@@ -1,0 +1,10 @@
+{
+    "id": "dlp-secure-transfer",
+    "class": "db.t4g.micro",
+    "engine": "postgres",
+    "version": "17.12",
+    "publiclyAccessible": false,
+    "multiAZ": false,
+    "encrypted": true,
+    "status": "available"
+}
