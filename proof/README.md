@@ -57,4 +57,7 @@ not by hand. Logs are redacted (12-digit account IDs, keys, tokens, passwords). 
 | `tests/playwright-eks/`, `tests/playwright-argocd/` | The sender -> approver -> recipient journey and ArgoCD check run against the cloud endpoints (JUnit) |
 
 ## Phase 3: destroy (`phase3-destroy/`)
-`terraform-destroy.log` from `scripts/destroy.sh`, `verify-destroyed.txt` from `scripts/verify-destroyed.sh`.
+| File | Proves |
+|---|---|
+| `terraform-destroy.log` | `scripts/destroy.sh` removed the ArgoCD app and load balancer first, emptied the bucket, then `terraform destroy`: 42 resources destroyed |
+| `verify-destroyed.txt` | `scripts/verify-destroyed.sh`: no EKS, RDS, SQS, S3, ECR, VPC, NAT, IAM roles, log groups or load balancers; the KMS key is `PendingDeletion`; nothing tagged `Project=dlp-secure-transfer` remains |

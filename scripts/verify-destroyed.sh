@@ -46,14 +46,34 @@ run() {
   done
   [ "$found" = 1 ] || echo "OK    no KMS key with this project's description (already purged)"
 
-  echo "-- resourcegroupstaggingapi (Project=dlp-secure-transfer); may lag a few minutes after deletion"
+  echo "-- resourcegroupstaggingapi (Project=dlp-secure-transfer); can lag after deletion, so each hit is confirmed by a direct describe call"
+  still_exists() { # ARN -> 0 if the resource really exists (or cannot be confirmed), 1 if a describe call says it is gone
+    local arn="$1" id="${1##*/}"
+    case "$arn" in
+      *:security-group-rule/*) aws ec2 describe-security-group-rules --security-group-rule-ids "$id" >/dev/null 2>&1 ;;
+      *:security-group/*)      aws ec2 describe-security-groups --group-ids "$id" >/dev/null 2>&1 ;;
+      *:subnet/*)              aws ec2 describe-subnets --subnet-ids "$id" >/dev/null 2>&1 ;;
+      *:vpc/*)                 aws ec2 describe-vpcs --vpc-ids "$id" >/dev/null 2>&1 ;;
+      *:internet-gateway/*)    aws ec2 describe-internet-gateways --internet-gateway-ids "$id" >/dev/null 2>&1 ;;
+      *:route-table/*)         aws ec2 describe-route-tables --route-table-ids "$id" >/dev/null 2>&1 ;;
+      *:instance/*)            [ "$(aws ec2 describe-instances --instance-ids "$id" --query 'Reservations[0].Instances[0].State.Name' --output text 2>/dev/null)" != "terminated" ] ;;
+      *:volume/*)              aws ec2 describe-volumes --volume-ids "$id" >/dev/null 2>&1 ;;
+      *:network-interface/*)   aws ec2 describe-network-interfaces --network-interface-ids "$id" >/dev/null 2>&1 ;;
+      *) return 0 ;;
+    esac
+  }
   left=""
-  for attempt in $(seq 1 12); do
-    left=$(aws resourcegroupstaggingapi get-resources --tag-filters Key=Project,Values=dlp-secure-transfer --query 'ResourceTagMappingList[].ResourceARN' --output text | tr '\t' '\n' | grep -v ':kms:' || true)
+  for attempt in $(seq 1 6); do
+    left=""
+    for arn in $(aws resourcegroupstaggingapi get-resources --tag-filters Key=Project,Values=dlp-secure-transfer --query 'ResourceTagMappingList[].ResourceARN' --output text | tr '	' '
+' | grep -v ':kms:'); do
+      if still_exists "$arn"; then left="$left$arn"$'
+'; else echo "  (stale tagging entry, describe says gone: ${arn##*:})"; fi
+    done
     [ -z "$left" ] && break
-    echo "  attempt $attempt: still listed: $(echo "$left" | wc -l) resource(s), waiting 30s"; sleep 30
+    echo "  attempt $attempt: $(printf '%s' "$left" | grep -c .) resource(s) confirmed present, waiting 30s"; sleep 30
   done
-  if [ -z "$left" ]; then echo "OK    nothing billable tagged Project=dlp-secure-transfer"; else echo "FAIL  still tagged:"; echo "$left" | sed 's/^/        /'; FAIL=1; fi
+  if [ -z "$left" ]; then echo "OK    nothing billable tagged Project=dlp-secure-transfer"; else echo "FAIL  still present:"; printf '%s' "$left" | sed 's/^/        /'; FAIL=1; fi
 
   [ "$FAIL" = 0 ] && echo "RESULT: ALL CLEAN" || echo "RESULT: RESOURCES REMAIN"
   return "$FAIL"

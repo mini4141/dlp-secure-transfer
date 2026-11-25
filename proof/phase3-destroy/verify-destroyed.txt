@@ -1,0 +1,18 @@
+verify-destroyed: 2026-11-25T23:02:57Z profile=dlp-secure-transfer-deployer region=ap-southeast-2
+-- specific checks (direct describe calls)
+OK    no EKS cluster
+OK    no RDS instance
+OK    no SQS queues
+OK    no S3 bucket
+OK    no ECR repositories
+OK    no VPC
+OK    no NAT gateways
+OK    no IAM roles
+OK    no CloudWatch log groups
+OK    no load balancers of this project (ELBv2 + classic)
+-- KMS key must be pending deletion
+OK    KMS key b33611c2-0de2-44b0-b017-45eb01546e0d is PendingDeletion
+-- resourcegroupstaggingapi (Project=dlp-secure-transfer); can lag after deletion, so each hit is confirmed by a direct describe call
+  (stale tagging entry, describe says gone: security-group-rule/sgr-0b5ee2bd2ef088241)
+OK    nothing billable tagged Project=dlp-secure-transfer
+RESULT: ALL CLEAN

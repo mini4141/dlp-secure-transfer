@@ -1,0 +1,1611 @@
+random_password.db: Refreshing state... [id=none]
+data.aws_availability_zones.available: Reading...
+data.aws_iam_policy_document.eks_assume: Reading...
+data.aws_iam_policy_document.pods_assume: Reading...
+data.aws_iam_policy_document.node_assume: Reading...
+aws_vpc.main: Refreshing state... [id=vpc-084b975c4096e2447]
+aws_cloudwatch_log_group.eks: Refreshing state... [id=/aws/eks/dlp-secure-transfer/cluster]
+aws_ecr_repository.repo["worker"]: Refreshing state... [id=dlp-secure-transfer/worker]
+aws_kms_key.main: Refreshing state... [id=b33611c2-0de2-44b0-b017-45eb01546e0d]
+data.aws_caller_identity.current: Reading...
+aws_ecr_repository.repo["api"]: Refreshing state... [id=dlp-secure-transfer/api]
+data.aws_iam_policy_document.pods_assume: Read complete after 0s [id=819195744]
+data.aws_iam_policy_document.eks_assume: Read complete after 0s [id=3552664922]
+data.aws_iam_policy_document.node_assume: Read complete after 0s [id=2851119427]
+aws_iam_role.cluster: Refreshing state... [id=dlp-secure-transfer-eks-cluster]
+aws_iam_role.node: Refreshing state... [id=dlp-secure-transfer-eks-node]
+data.aws_caller_identity.current: Read complete after 1s [id=<ACCOUNT_ID>]
+aws_s3_bucket.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+data.aws_availability_zones.available: Read complete after 2s [id=ap-southeast-2]
+aws_iam_role_policy_attachment.cluster: Refreshing state... [id=dlp-secure-transfer-eks-cluster/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+aws_kms_alias.main: Refreshing state... [id=alias/dlp-secure-transfer]
+aws_sqs_queue.dlq: Refreshing state... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq]
+aws_sqs_queue.scan: Refreshing state... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan]
+aws_internet_gateway.main: Refreshing state... [id=igw-<ACCOUNT_ID>ca47e]
+aws_security_group.db: Refreshing state... [id=sg-06b1569bbd7b63e3d]
+aws_subnet.public[1]: Refreshing state... [id=subnet-0175acb8782aa3e39]
+aws_subnet.public[0]: Refreshing state... [id=subnet-012d<ACCOUNT_ID>9]
+aws_route_table.public: Refreshing state... [id=rtb-0ed3425f0c7699f8f]
+aws_db_subnet_group.main: Refreshing state... [id=dlp-secure-transfer]
+aws_eks_cluster.main: Refreshing state... [id=dlp-secure-transfer]
+aws_s3_bucket_versioning.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_s3_bucket_public_access_block.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_s3_bucket_server_side_encryption_configuration.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+data.aws_iam_policy_document.bucket_tls_only: Reading...
+aws_s3_bucket_cors_configuration.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+data.aws_iam_policy_document.workload["api"]: Reading...
+data.aws_iam_policy_document.workload["worker"]: Reading...
+data.aws_iam_policy_document.bucket_tls_only: Read complete after 0s [id=2765809922]
+data.aws_iam_policy_document.workload["worker"]: Read complete after 0s [id=4186138049]
+data.aws_iam_policy_document.workload["api"]: Read complete after 0s [id=2693662652]
+aws_iam_role.workload["worker"]: Refreshing state... [id=dlp-secure-transfer-worker]
+aws_iam_role.workload["api"]: Refreshing state... [id=dlp-secure-transfer-api]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-05efab35e19a54a17]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0973f2029613c9f94]
+aws_s3_bucket_policy.transfers: Refreshing state... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_eks_access_entry.deployer: Refreshing state... [id=dlp-secure-transfer:arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer]
+aws_vpc_security_group_ingress_rule.db_from_eks: Refreshing state... [id=sgr-0b5ee2bd2ef088241]
+aws_eks_node_group.main: Refreshing state... [id=dlp-secure-transfer:spot]
+aws_iam_role_policy.workload["api"]: Refreshing state... [id=dlp-secure-transfer-api:access]
+aws_iam_role_policy.workload["worker"]: Refreshing state... [id=dlp-secure-transfer-worker:access]
+aws_eks_addon.pod_identity: Refreshing state... [id=dlp-secure-transfer:eks-pod-identity-agent]
+aws_eks_access_policy_association.deployer: Refreshing state... [id=dlp-secure-transfer#arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+aws_db_instance.main: Refreshing state... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4]
+aws_eks_pod_identity_association.workload["worker"]: Refreshing state... [id=a-xb6bp3z3bykvlsabh]
+aws_eks_pod_identity_association.workload["api"]: Refreshing state... [id=a-x1lnycvqgmn8watvu]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.eks will be destroyed
+  - resource "aws_cloudwatch_log_group" "eks" {
+      - arn                         = "arn:aws:logs:ap-southeast-2:<ACCOUNT_ID>:log-group:/aws/eks/dlp-secure-transfer/cluster" -> null
+      - deletion_protection_enabled = false -> null
+      - id                          = "/aws/eks/dlp-secure-transfer/cluster" -> null
+      - log_group_class             = "STANDARD" -> null
+      - name                        = "/aws/eks/dlp-secure-transfer/cluster" -> null
+      - region                      = "ap-southeast-2" -> null
+      - retention_in_days           = 1 -> null
+      - skip_destroy                = false -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_db_instance.main will be destroyed
+  - resource "aws_db_instance" "main" {
+      - address                               = "dlp-secure-transfer.c3qm82siib5v.ap-southeast-2.rds.amazonaws.com" -> null
+      - allocated_storage                     = 20 -> null
+      - apply_immediately                     = true -> null
+      - arn                                   = "arn:aws:rds:ap-southeast-2:<ACCOUNT_ID>:db:dlp-secure-transfer" -> null
+      - auto_minor_version_upgrade            = true -> null
+      - availability_zone                     = "ap-southeast-2a" -> null
+      - backup_retention_period               = 1 -> null
+      - backup_target                         = "region" -> null
+      - backup_window                         = "16:28-16:58" -> null
+      - ca_cert_identifier                    = "rds-ca-rsa2048-g1" -> null
+      - copy_tags_to_snapshot                 = false -> null
+      - customer_owned_ip_enabled             = false -> null
+      - database_insights_mode                = "standard" -> null
+      - db_name                               = "dlp" -> null
+      - db_subnet_group_name                  = "dlp-secure-transfer" -> null
+      - dedicated_log_volume                  = false -> null
+      - delete_automated_backups              = true -> null
+      - deletion_protection                   = false -> null
+      - domain_dns_ips                        = [] -> null
+      - enabled_cloudwatch_logs_exports       = [] -> null
+      - endpoint                              = "dlp-secure-transfer.c3qm82siib5v.ap-southeast-2.rds.amazonaws.com:5432" -> null
+      - engine                                = "postgres" -> null
+      - engine_lifecycle_support              = "open-source-rds-extended-support" -> null
+      - engine_version                        = "17.12" -> null
+      - engine_version_actual                 = "17.12" -> null
+      - hosted_zone_id                        = "Z32T0VRHXEXS0V" -> null
+      - iam_database_authentication_enabled   = false -> null
+      - id                                    = "db-7CJ5BSQZ6HYIMCTND47KQJZFJ4" -> null
+      - identifier                            = "dlp-secure-transfer" -> null
+      - instance_class                        = "db.t4g.micro" -> null
+      - iops                                  = 3000 -> null
+      - kms_key_id                            = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - latest_restorable_time                = "2026-11-25T22:39:40Z" -> null
+      - license_model                         = "postgresql-license" -> null
+      - listener_endpoint                     = [] -> null
+      - maintenance_window                    = "sun:14:37-sun:15:07" -> null
+      - master_user_secret                    = <REDACTED> -> null
+      - max_allocated_storage                 = 0 -> null
+      - monitoring_interval                   = 0 -> null
+      - multi_az                              = false -> null
+      - multi_tenant                          = false -> null
+      - network_type                          = "IPV4" -> null
+      - option_group_name                     = "default:postgres-17" -> null
+      - parameter_group_name                  = "default.postgres17" -> null
+      - password                              = <REDACTED> value) -> null
+      - password_wo                           = (write-only attribute) -> null
+      - performance_insights_enabled          = false -> null
+      - performance_insights_retention_period = 0 -> null
+      - port                                  = 5432 -> null
+      - publicly_accessible                   = false -> null
+      - region                                = "ap-southeast-2" -> null
+      - replicas                              = [] -> null
+      - resource_id                           = "db-7CJ5BSQZ6HYIMCTND47KQJZFJ4" -> null
+      - skip_final_snapshot                   = true -> null
+      - status                                = "available" -> null
+      - storage_encrypted                     = true -> null
+      - storage_throughput                    = 125 -> null
+      - storage_type                          = "gp3" -> null
+      - tags                                  = {} -> null
+      - tags_all                              = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - upgrade_rollout_order                 = "second" -> null
+      - username                              = "dlp" -> null
+      - vpc_security_group_ids                = [
+          - "sg-06b1569bbd7b63e3d",
+        ] -> null
+        # (14 unchanged attributes hidden)
+    }
+
+  # aws_db_subnet_group.main will be destroyed
+  - resource "aws_db_subnet_group" "main" {
+      - arn                     = "arn:aws:rds:ap-southeast-2:<ACCOUNT_ID>:subgrp:dlp-secure-transfer" -> null
+      - description             = "Managed by Terraform" -> null
+      - id                      = "dlp-secure-transfer" -> null
+      - name                    = "dlp-secure-transfer" -> null
+      - region                  = "ap-southeast-2" -> null
+      - subnet_ids              = [
+          - "subnet-012d<ACCOUNT_ID>9",
+          - "subnet-0175acb8782aa3e39",
+        ] -> null
+      - supported_network_types = [
+          - "IPV4",
+        ] -> null
+      - tags                    = {} -> null
+      - tags_all                = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - vpc_id                  = "vpc-084b975c4096e2447" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_ecr_repository.repo["api"] will be destroyed
+  - resource "aws_ecr_repository" "repo" {
+      - arn                  = "arn:aws:ecr:ap-southeast-2:<ACCOUNT_ID>:repository/dlp-secure-transfer/api" -> null
+      - force_delete         = true -> null
+      - id                   = "dlp-secure-transfer/api" -> null
+      - image_tag_mutability = "MUTABLE" -> null
+      - name                 = "dlp-secure-transfer/api" -> null
+      - region               = "ap-southeast-2" -> null
+      - registry_id          = "<ACCOUNT_ID>" -> null
+      - repository_url       = "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/api" -> null
+      - tags                 = {} -> null
+      - tags_all             = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+
+      - encryption_configuration {
+          - encryption_type = "AES256" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - image_scanning_configuration {
+          - scan_on_push = true -> null
+        }
+    }
+
+  # aws_ecr_repository.repo["worker"] will be destroyed
+  - resource "aws_ecr_repository" "repo" {
+      - arn                  = "arn:aws:ecr:ap-southeast-2:<ACCOUNT_ID>:repository/dlp-secure-transfer/worker" -> null
+      - force_delete         = true -> null
+      - id                   = "dlp-secure-transfer/worker" -> null
+      - image_tag_mutability = "MUTABLE" -> null
+      - name                 = "dlp-secure-transfer/worker" -> null
+      - region               = "ap-southeast-2" -> null
+      - registry_id          = "<ACCOUNT_ID>" -> null
+      - repository_url       = "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/worker" -> null
+      - tags                 = {} -> null
+      - tags_all             = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+
+      - encryption_configuration {
+          - encryption_type = "AES256" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - image_scanning_configuration {
+          - scan_on_push = true -> null
+        }
+    }
+
+  # aws_eks_access_entry.deployer will be destroyed
+  - resource "aws_eks_access_entry" "deployer" {
+      - access_entry_arn  = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:access-entry/dlp-secure-transfer/user/<ACCOUNT_ID>/dlp-secure-transfer-deployer/f0d10a5e-fb26-9404-1963-9b57dd9cd978" -> null
+      - cluster_name      = "dlp-secure-transfer" -> null
+      - created_at        = "2026-11-25T22:05:23Z" -> null
+      - id                = "dlp-secure-transfer:arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer" -> null
+      - kubernetes_groups = [] -> null
+      - modified_at       = "2026-11-25T22:05:23Z" -> null
+      - principal_arn     = "arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer" -> null
+      - region            = "ap-southeast-2" -> null
+      - tags              = {} -> null
+      - tags_all          = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - type              = "STANDARD" -> null
+      - user_name         = "arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer" -> null
+    }
+
+  # aws_eks_access_policy_association.deployer will be destroyed
+  - resource "aws_eks_access_policy_association" "deployer" {
+      - associated_at = "2026-11-25 22:05:24.848 +0000 UTC" -> null
+      - cluster_name  = "dlp-secure-transfer" -> null
+      - id            = "dlp-secure-transfer#arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - modified_at   = "2026-11-25 22:05:24.848 +0000 UTC" -> null
+      - policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy" -> null
+      - principal_arn = "arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer" -> null
+      - region        = "ap-southeast-2" -> null
+
+      - access_scope {
+          - namespaces = [] -> null
+          - type       = "cluster" -> null
+        }
+    }
+
+  # aws_eks_addon.pod_identity will be destroyed
+  - resource "aws_eks_addon" "pod_identity" {
+      - addon_name               = "eks-pod-identity-agent" -> null
+      - addon_version            = "v1.4.1-eksbuild.3" -> null
+      - arn                      = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:addon/dlp-secure-transfer/eks-pod-identity-agent/d0d10a58-da73-2195-91cf-5d7d324028a3" -> null
+      - cluster_name             = "dlp-secure-transfer" -> null
+      - created_at               = "2026-11-25T21:52:00Z" -> null
+      - id                       = "dlp-secure-transfer:eks-pod-identity-agent" -> null
+      - modified_at              = "2026-11-25T21:52:16Z" -> null
+      - region                   = "ap-southeast-2" -> null
+      - tags                     = {} -> null
+      - tags_all                 = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - namespace_config {
+          - namespace = "kube-system" -> null
+        }
+    }
+
+  # aws_eks_cluster.main will be destroyed
+  - resource "aws_eks_cluster" "main" {
+      - arn                           = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:cluster/dlp-secure-transfer" -> null
+      - bootstrap_self_managed_addons = true -> null
+      - certificate_authority         = [
+          - {
+              - data = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNVENDQWhtZ0F3SUJBZ0lRVkZlTmRmOHQ2ZUZHS3ErK0l6Q2xIakFOQmdrcWhraUc5dzBCQVFzRkFEQW4KTVJBd0RnWURWUVFLRXdkQlYxTWdSVXRUTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkyTVRFeQpOVEl4TkRNd01sb1hEVE14TVRFeU5ESXhORE13TWxvd0p6RVFNQTRHQTFVRUNoTUhRVmRUSUVWTFV6RVRNQkVHCkExVUVBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUIKQUs0dmNBTDFkNmFLcEE2WVNnTVJHSWJzcjhUM1RucE1wSGE0S1ltZXVvcjNQeUNYQjUvOXBpbWNLMDZWNy9oWgp5ZGNmL2x4VHFmV1A3U214c3l0bUdwbFlrZS9ZOVZnN2ZxYThWclFPbERzTC90eWhjUTh3cHBmQkJmREROTG9BClpsOHJQMGNjbDZkc0k2djM4R1A3UjRaejlENHdNYjhPSzhMVkt6YWhUeWkxZE15d2RodTIraUtqaTZ2R1dHazQKS2kwTitUUHp1Vytza0JhajZraDVmdzBQemdkVW84WXNjS3ZNZVhyT1pSc1BYMmpSYnUxQzlYK3c3MlY0Qk8wagpudWh5aDFOMGJ5TXMwWERwMnBxeEQ3czdLL2xGT2ZXZFBqK3grRGtuZTBqU0g1eDEyTTFSL3JMaHNyaGZmajY3Cnl4SGNQTHRoL0JhVUI4WXZhM2xLczlrQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWQKRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZETWIzb3Y0QmZQRjNCbklnaUNpY1NBWEhDRVBNQlVHQTFVZApFUVFPTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQXdhTnVsM3ovQWdrd21zCi9YaEpCa1ZHSlZRaEc4cmVhLzU2N2Z5TzgycytIanp2WFJaSCszYk8wZzFkNk9oK0RJdUd3Y0tKb3FoMEpOMVYKSmxwU2ltRFYzcjArd3IxNWxyRUJqRytIak00bGIrUGJSVVlMS0VCU3NLejdlNUVhZk0vcTZFd1hyamlJTEg2ZwpZZCtNb0RETVZ0Kzd1WHdESC9mRitXNktsL3hqK09QZVRXZ09DTHRzQnc2andZbFJuVFk3VjZ1dFV6MnNEVWo1CjlSMWduaC9CK0JWU0hIUXF0c3NIdFhEVFJpS3RNaGg3NnZHVlJ4NXpkYVh4eUM3aUUyWkdLYnJuSGRURXVBVi8KY1FSVzViTDRnRUJ3dWJ1Q3F0dXRwdkxuaXp1RlF5bHFsc21pN1FtanMzVU9JSklVWVlhTFVMQ0hVUS9zKy9iQwpnNTkwcUJ3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+            },
+        ] -> null
+      - created_at                    = "2026-11-25T21:42:37Z" -> null
+      - deletion_protection           = false -> null
+      - enabled_cluster_log_types     = [
+          - "api",
+        ] -> null
+      - endpoint                      = "https://F720FD2713937DAE4C91B6AB9B3CA066.gr7.ap-southeast-2.eks.amazonaws.com" -> null
+      - id                            = "dlp-secure-transfer" -> null
+      - identity                      = [
+          - {
+              - oidc = [
+                  - {
+                      - issuer = "https://oidc.eks.ap-southeast-2.amazonaws.com/id/F720FD2713937DAE4C91B6AB9B3CA066"
+                    },
+                ]
+            },
+        ] -> null
+      - name                          = "dlp-secure-transfer" -> null
+      - platform_version              = "eks.19" -> null
+      - region                        = "ap-southeast-2" -> null
+      - role_arn                      = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-eks-cluster" -> null
+      - status                        = "ACTIVE" -> null
+      - tags                          = {} -> null
+      - tags_all                      = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - version                       = "1.36" -> null
+
+      - access_config {
+          - authentication_mode                         = "API_AND_CONFIG_MAP" -> null
+          - bootstrap_cluster_creator_admin_permissions = false -> null
+        }
+
+      - compute_config {
+          - enabled       = false -> null
+          - node_pools    = [] -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - control_plane_scaling_config {
+          - tier = "standard" -> null
+        }
+
+      - kube_api_server_config {
+          - event_ttl = "60m" -> null
+
+          - service_node_port_range {
+              - max_port = 32767 -> null
+              - min_port = 30000 -> null
+            }
+        }
+
+      - kube_controller_manager_config {
+          - horizontal_pod_autoscaler_controller_config {
+              - horizontal_pod_autoscaler_sync_period = "15s" -> null
+            }
+          - pod_gc_controller_config {
+              - terminated_pod_gc_threshold = 12500 -> null
+            }
+        }
+
+      - kube_scheduler_config {
+          - node_resources_fit {
+              - scoring_strategy {
+                  - type = "LeastAllocated" -> null
+
+                  - resource {
+                      - name   = "cpu" -> null
+                      - weight = 1 -> null
+                    }
+                  - resource {
+                      - name   = "memory" -> null
+                      - weight = 1 -> null
+                    }
+                }
+            }
+        }
+
+      - kubernetes_network_config {
+          - ip_family         = "ipv4" -> null
+          - service_ipv4_cidr = "172.20.0.0/16" -> null
+            # (1 unchanged attribute hidden)
+
+          - elastic_load_balancing {
+              - enabled = false -> null
+            }
+        }
+
+      - storage_config {
+          - block_storage {
+              - enabled = false -> null
+            }
+        }
+
+      - upgrade_policy {
+          - support_type = "EXTENDED" -> null
+        }
+
+      - vpc_config {
+          - cluster_security_group_id = "sg-0bf3dfe58fe0c2a74" -> null
+          - control_plane_egress_mode = "AWS_MANAGED" -> null
+          - endpoint_private_access   = false -> null
+          - endpoint_public_access    = true -> null
+          - public_access_cidrs       = [
+              - "0.0.0.0/0",
+            ] -> null
+          - security_group_ids        = [] -> null
+          - subnet_ids                = [
+              - "subnet-012d<ACCOUNT_ID>9",
+              - "subnet-0175acb8782aa3e39",
+            ] -> null
+          - vpc_id                    = "vpc-084b975c4096e2447" -> null
+        }
+    }
+
+  # aws_eks_node_group.main will be destroyed
+  - resource "aws_eks_node_group" "main" {
+      - ami_type               = "AL2023_x86_64_STANDARD" -> null
+      - arn                    = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:nodegroup/dlp-secure-transfer/spot/ced10a57-d14e-e583-e2ce-2e305f3c65de" -> null
+      - capacity_type          = "SPOT" -> null
+      - cluster_name           = "dlp-secure-transfer" -> null
+      - disk_size              = 20 -> null
+      - id                     = "dlp-secure-transfer:spot" -> null
+      - instance_types         = [
+          - "t3.medium",
+        ] -> null
+      - labels                 = {} -> null
+      - node_group_name        = "spot" -> null
+      - node_role_arn          = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-eks-node" -> null
+      - region                 = "ap-southeast-2" -> null
+      - release_version        = "1.36.5-20261119" -> null
+      - resources              = [
+          - {
+              - autoscaling_groups              = [
+                  - {
+                      - name = "eks-spot-ced10a57-d14e-e583-e2ce-2e305f3c65de"
+                    },
+                ]
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - status                 = "ACTIVE" -> null
+      - subnet_ids             = [
+          - "subnet-012d<ACCOUNT_ID>9",
+          - "subnet-0175acb8782aa3e39",
+        ] -> null
+      - tags                   = {} -> null
+      - tags_all               = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - version                = "1.36" -> null
+        # (1 unchanged attribute hidden)
+
+      - scaling_config {
+          - desired_size = 2 -> null
+          - max_size     = 2 -> null
+          - min_size     = 2 -> null
+        }
+
+      - update_config {
+          - max_unavailable            = 1 -> null
+          - max_unavailable_percentage = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_eks_pod_identity_association.workload["api"] will be destroyed
+  - resource "aws_eks_pod_identity_association" "workload" {
+      - association_arn      = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-x1lnycvqgmn8watvu" -> null
+      - association_id       = "a-x1lnycvqgmn8watvu" -> null
+      - cluster_name         = "dlp-secure-transfer" -> null
+      - disable_session_tags = false -> null
+      - id                   = "a-x1lnycvqgmn8watvu" -> null
+      - namespace            = "dlp" -> null
+      - region               = "ap-southeast-2" -> null
+      - role_arn             = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-api" -> null
+      - service_account      = "dlp-secure-transfer-api" -> null
+      - tags_all             = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+    }
+
+  # aws_eks_pod_identity_association.workload["worker"] will be destroyed
+  - resource "aws_eks_pod_identity_association" "workload" {
+      - association_arn      = "arn:aws:eks:ap-southeast-2:<ACCOUNT_ID>:podidentityassociation/dlp-secure-transfer/a-xb6bp3z3bykvlsabh" -> null
+      - association_id       = "a-xb6bp3z3bykvlsabh" -> null
+      - cluster_name         = "dlp-secure-transfer" -> null
+      - disable_session_tags = false -> null
+      - id                   = "a-xb6bp3z3bykvlsabh" -> null
+      - namespace            = "dlp" -> null
+      - region               = "ap-southeast-2" -> null
+      - role_arn             = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-worker" -> null
+      - service_account      = "dlp-secure-transfer-worker" -> null
+      - tags_all             = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+    }
+
+  # aws_iam_role.cluster will be destroyed
+  - resource "aws_iam_role" "cluster" {
+      - arn                   = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-eks-cluster" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "eks.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-11-25T21:42:14Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "dlp-secure-transfer-eks-cluster" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "dlp-secure-transfer-eks-cluster" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - unique_id             = "AROARGJPVJ2XBZZAPWNIL" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.node will be destroyed
+  - resource "aws_iam_role" "node" {
+      - arn                   = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-eks-node" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-11-25T21:42:14Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "dlp-secure-transfer-eks-node" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+          - "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+          - "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "dlp-secure-transfer-eks-node" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - unique_id             = "AROARGJPVJ2XBSSHUMU4B" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.workload["api"] will be destroyed
+  - resource "aws_iam_role" "workload" {
+      - arn                   = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-api" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = [
+                          - "sts:TagSession",
+                          - "sts:AssumeRole",
+                        ]
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-11-25T21:43:26Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "dlp-secure-transfer-api" -> null
+      - managed_policy_arns   = [] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "dlp-secure-transfer-api" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - unique_id             = "AROARGJPVJ2XCQCTCUI6L" -> null
+        # (3 unchanged attributes hidden)
+
+      - inline_policy {
+          - name   = "access" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = [
+                              - "s3:PutObject",
+                              - "s3:GetObject",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*"
+                        },
+                      - {
+                          - Action   = [
+                              - "sqs:SendMessage",
+                              - "sqs:GetQueueUrl",
+                              - "sqs:GetQueueAttributes",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan"
+                        },
+                      - {
+                          - Action   = [
+                              - "kms:GenerateDataKey",
+                              - "kms:Decrypt",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+    }
+
+  # aws_iam_role.workload["worker"] will be destroyed
+  - resource "aws_iam_role" "workload" {
+      - arn                   = "arn:aws:iam::<ACCOUNT_ID>:role/dlp-secure-transfer-worker" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = [
+                          - "sts:TagSession",
+                          - "sts:AssumeRole",
+                        ]
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-11-25T21:43:26Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "dlp-secure-transfer-worker" -> null
+      - managed_policy_arns   = [] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "dlp-secure-transfer-worker" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - unique_id             = "AROARGJPVJ2XP2UOPW2JW" -> null
+        # (3 unchanged attributes hidden)
+
+      - inline_policy {
+          - name   = "access" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = [
+                              - "s3:PutObject",
+                              - "s3:GetObject",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*"
+                        },
+                      - {
+                          - Action   = [
+                              - "sqs:ReceiveMessage",
+                              - "sqs:GetQueueUrl",
+                              - "sqs:GetQueueAttributes",
+                              - "sqs:DeleteMessage",
+                              - "sqs:ChangeMessageVisibility",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan"
+                        },
+                      - {
+                          - Action   = [
+                              - "kms:GenerateDataKey",
+                              - "kms:Decrypt",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+    }
+
+  # aws_iam_role_policy.workload["api"] will be destroyed
+  - resource "aws_iam_role_policy" "workload" {
+      - id          = "dlp-secure-transfer-api:access" -> null
+      - name        = "access" -> null
+      - policy      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action   = [
+                          - "s3:PutObject",
+                          - "s3:GetObject",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*"
+                    },
+                  - {
+                      - Action   = [
+                          - "sqs:SendMessage",
+                          - "sqs:GetQueueUrl",
+                          - "sqs:GetQueueAttributes",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan"
+                    },
+                  - {
+                      - Action   = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - role        = "dlp-secure-transfer-api" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role_policy.workload["worker"] will be destroyed
+  - resource "aws_iam_role_policy" "workload" {
+      - id          = "dlp-secure-transfer-worker:access" -> null
+      - name        = "access" -> null
+      - policy      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action   = [
+                          - "s3:PutObject",
+                          - "s3:GetObject",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*"
+                    },
+                  - {
+                      - Action   = [
+                          - "sqs:ReceiveMessage",
+                          - "sqs:GetQueueUrl",
+                          - "sqs:GetQueueAttributes",
+                          - "sqs:DeleteMessage",
+                          - "sqs:ChangeMessageVisibility",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan"
+                    },
+                  - {
+                      - Action   = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - role        = "dlp-secure-transfer-worker" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role_policy_attachment.cluster will be destroyed
+  - resource "aws_iam_role_policy_attachment" "cluster" {
+      - id         = "dlp-secure-transfer-eks-cluster/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" -> null
+      - role       = "dlp-secure-transfer-eks-cluster" -> null
+    }
+
+  # aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "node" {
+      - id         = "dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" -> null
+      - role       = "dlp-secure-transfer-eks-node" -> null
+    }
+
+  # aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "node" {
+      - id         = "dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy" -> null
+      - role       = "dlp-secure-transfer-eks-node" -> null
+    }
+
+  # aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "node" {
+      - id         = "dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy" -> null
+      - role       = "dlp-secure-transfer-eks-node" -> null
+    }
+
+  # aws_internet_gateway.main will be destroyed
+  - resource "aws_internet_gateway" "main" {
+      - arn      = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:internet-gateway/igw-<ACCOUNT_ID>ca47e" -> null
+      - id       = "igw-<ACCOUNT_ID>ca47e" -> null
+      - owner_id = "<ACCOUNT_ID>" -> null
+      - region   = "ap-southeast-2" -> null
+      - tags     = {
+          - "Name" = "dlp-secure-transfer"
+        } -> null
+      - tags_all = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "dlp-secure-transfer"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - vpc_id   = "vpc-084b975c4096e2447" -> null
+    }
+
+  # aws_kms_alias.main will be destroyed
+  - resource "aws_kms_alias" "main" {
+      - arn            = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:alias/dlp-secure-transfer" -> null
+      - id             = "alias/dlp-secure-transfer" -> null
+      - name           = "alias/dlp-secure-transfer" -> null
+      - region         = "ap-southeast-2" -> null
+      - target_key_arn = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - target_key_id  = "b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_kms_key.main will be destroyed
+  - resource "aws_kms_key" "main" {
+      - arn                                = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - bypass_policy_lockout_safety_check = false -> null
+      - customer_master_key_spec           = "SYMMETRIC_DEFAULT" -> null
+      - deletion_window_in_days            = 7 -> null
+      - description                        = "dlp-secure-transfer data key (S3, SQS, RDS)" -> null
+      - enable_key_rotation                = true -> null
+      - id                                 = "b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - is_enabled                         = true -> null
+      - key_id                             = "b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - key_usage                          = "ENCRYPT_DECRYPT" -> null
+      - multi_region                       = false -> null
+      - policy                             = jsonencode(
+            {
+              - Id        = "key-default-1"
+              - Statement = [
+                  - {
+                      - Action    = "kms:*"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::<ACCOUNT_ID>:root"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Enable IAM User Permissions"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region                             = "ap-southeast-2" -> null
+      - rotation_period_in_days            = 365 -> null
+      - tags                               = {} -> null
+      - tags_all                           = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_route_table.public will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:route-table/rtb-0ed3425f0c7699f8f" -> null
+      - id               = "rtb-0ed3425f0c7699f8f" -> null
+      - owner_id         = "<ACCOUNT_ID>" -> null
+      - propagating_vgws = [] -> null
+      - region           = "ap-southeast-2" -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-<ACCOUNT_ID>ca47e"
+                # (12 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "dlp-secure-transfer-public"
+        } -> null
+      - tags_all         = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "dlp-secure-transfer-public"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - vpc_id           = "vpc-084b975c4096e2447" -> null
+    }
+
+  # aws_route_table_association.public[0] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-0973f2029613c9f94" -> null
+      - region         = "ap-southeast-2" -> null
+      - route_table_id = "rtb-0ed3425f0c7699f8f" -> null
+      - subnet_id      = "subnet-012d<ACCOUNT_ID>9" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.public[1] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-05efab35e19a54a17" -> null
+      - region         = "ap-southeast-2" -> null
+      - route_table_id = "rtb-0ed3425f0c7699f8f" -> null
+      - subnet_id      = "subnet-0175acb8782aa3e39" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_s3_bucket.transfers will be destroyed
+  - resource "aws_s3_bucket" "transfers" {
+      - arn                         = "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - bucket                      = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - bucket_domain_name          = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2.s3.amazonaws.com" -> null
+      - bucket_namespace            = "global" -> null
+      - bucket_region               = "ap-southeast-2" -> null
+      - bucket_regional_domain_name = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2.s3.ap-southeast-2.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z1WCIGYICN2BYD" -> null
+      - id                          = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - object_lock_enabled         = false -> null
+      - policy                      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*",
+                          - "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2",
+                        ]
+                      - Sid       = "DenyInsecureTransport"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region                      = "ap-southeast-2" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - cors_rule {
+          - allowed_headers = [
+              - "*",
+            ] -> null
+          - allowed_methods = [
+              - "GET",
+              - "HEAD",
+              - "PUT",
+            ] -> null
+          - allowed_origins = [
+              - "*",
+            ] -> null
+          - expose_headers  = [] -> null
+          - max_age_seconds = 300 -> null
+        }
+
+      - grant {
+          - id          = "a508a599311948b37285af5c<ACCOUNT_ID>806205571dc6e189df5fadd00da6" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = true -> null
+
+              - apply_server_side_encryption_by_default {
+                  - kms_master_key_id = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+                  - sse_algorithm     = "aws:kms" -> null
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = true -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_cors_configuration.transfers will be destroyed
+  - resource "aws_s3_bucket_cors_configuration" "transfers" {
+      - bucket                = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - id                    = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - region                = "ap-southeast-2" -> null
+        # (1 unchanged attribute hidden)
+
+      - cors_rule {
+          - allowed_headers = [
+              - "*",
+            ] -> null
+          - allowed_methods = [
+              - "GET",
+              - "HEAD",
+              - "PUT",
+            ] -> null
+          - allowed_origins = [
+              - "*",
+            ] -> null
+          - expose_headers  = [] -> null
+            id              = null
+          - max_age_seconds = 300 -> null
+        }
+    }
+
+  # aws_s3_bucket_policy.transfers will be destroyed
+  - resource "aws_s3_bucket_policy" "transfers" {
+      - bucket = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - id     = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - policy = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2/*",
+                          - "arn:aws:s3:::dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2",
+                        ]
+                      - Sid       = "DenyInsecureTransport"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region = "ap-southeast-2" -> null
+    }
+
+  # aws_s3_bucket_public_access_block.transfers will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "transfers" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - id                      = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - ignore_public_acls      = true -> null
+      - region                  = "ap-southeast-2" -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.transfers will be destroyed
+  - resource "aws_s3_bucket_server_side_encryption_configuration" "transfers" {
+      - bucket                = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - id                    = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - region                = "ap-southeast-2" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - blocked_encryption_types = [
+              - "SSE-C",
+            ] -> null
+          - bucket_key_enabled       = true -> null
+
+          - apply_server_side_encryption_by_default {
+              - kms_master_key_id = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+              - sse_algorithm     = "aws:kms" -> null
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.transfers will be destroyed
+  - resource "aws_s3_bucket_versioning" "transfers" {
+      - bucket                = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - id                    = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+      - region                = "ap-southeast-2" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - mfa_delete = "Disabled" -> null
+          - status     = "Enabled" -> null
+        }
+    }
+
+  # aws_security_group.db will be destroyed
+  - resource "aws_security_group" "db" {
+      - arn                    = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:security-group/sg-06b1569bbd7b63e3d" -> null
+      - description            = "PostgreSQL from the EKS tier only" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-06b1569bbd7b63e3d" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "app tier"
+              - from_port        = 5432
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0bf3dfe58fe0c2a74",
+                ]
+              - self             = false
+              - to_port          = 5432
+            },
+        ] -> null
+      - name                   = "dlp-secure-transfer-db" -> null
+      - owner_id               = "<ACCOUNT_ID>" -> null
+      - region                 = "ap-southeast-2" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {} -> null
+      - tags_all               = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - vpc_id                 = "vpc-084b975c4096e2447" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_sqs_queue.dlq will be destroyed
+  - resource "aws_sqs_queue" "dlq" {
+      - arn                               = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan-dlq" -> null
+      - content_based_deduplication       = false -> null
+      - delay_seconds                     = 0 -> null
+      - fifo_queue                        = false -> null
+      - id                                = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq" -> null
+      - kms_data_key_reuse_period_seconds = 300 -> null
+      - kms_master_key_id                 = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - max_message_size                  = 262144 -> null
+      - message_retention_seconds         = 345600 -> null
+      - name                              = "dlp-secure-transfer-scan-dlq" -> null
+      - receive_wait_time_seconds         = 0 -> null
+      - region                            = "ap-southeast-2" -> null
+      - sqs_managed_sse_enabled           = false -> null
+      - tags                              = {} -> null
+      - tags_all                          = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - url                               = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq" -> null
+      - visibility_timeout_seconds        = 30 -> null
+        # (6 unchanged attributes hidden)
+    }
+
+  # aws_sqs_queue.scan will be destroyed
+  - resource "aws_sqs_queue" "scan" {
+      - arn                               = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan" -> null
+      - content_based_deduplication       = false -> null
+      - delay_seconds                     = 0 -> null
+      - fifo_queue                        = false -> null
+      - id                                = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan" -> null
+      - kms_data_key_reuse_period_seconds = 300 -> null
+      - kms_master_key_id                 = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+      - max_message_size                  = 262144 -> null
+      - message_retention_seconds         = 345600 -> null
+      - name                              = "dlp-secure-transfer-scan" -> null
+      - receive_wait_time_seconds         = 10 -> null
+      - redrive_policy                    = jsonencode(
+            {
+              - deadLetterTargetArn = "arn:aws:sqs:ap-southeast-2:<ACCOUNT_ID>:dlp-secure-transfer-scan-dlq"
+              - maxReceiveCount     = 3
+            }
+        ) -> null
+      - region                            = "ap-southeast-2" -> null
+      - sqs_managed_sse_enabled           = false -> null
+      - tags                              = {} -> null
+      - tags_all                          = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - url                               = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan" -> null
+      - visibility_timeout_seconds        = 30 -> null
+        # (5 unchanged attributes hidden)
+    }
+
+  # aws_subnet.public[0] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:subnet/subnet-012d<ACCOUNT_ID>9" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-southeast-2a" -> null
+      - availability_zone_id                           = "apse2-az1" -> null
+      - cidr_block                                     = "10.20.0.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-012d<ACCOUNT_ID>9" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "<ACCOUNT_ID>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-southeast-2" -> null
+      - tags                                           = {
+          - "Name"                                      = "dlp-secure-transfer-public-ap-southeast-2a"
+          - "kubernetes.io/cluster/dlp-secure-transfer" = "shared"
+          - "kubernetes.io/role/elb"                    = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Ephemeral"                                 = "true"
+          - "ManagedBy"                                 = "terraform"
+          - "Name"                                      = "dlp-secure-transfer-public-ap-southeast-2a"
+          - "Owner"                                     = "alvieirvansyah"
+          - "Project"                                   = "dlp-secure-transfer"
+          - "kubernetes.io/cluster/dlp-secure-transfer" = "shared"
+          - "kubernetes.io/role/elb"                    = "1"
+        } -> null
+      - vpc_id                                         = "vpc-084b975c4096e2447" -> null
+        # (5 unchanged attributes hidden)
+    }
+
+  # aws_subnet.public[1] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:subnet/subnet-0175acb8782aa3e39" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "ap-southeast-2b" -> null
+      - availability_zone_id                           = "apse2-az3" -> null
+      - cidr_block                                     = "10.20.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0175acb8782aa3e39" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "<ACCOUNT_ID>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "ap-southeast-2" -> null
+      - tags                                           = {
+          - "Name"                                      = "dlp-secure-transfer-public-ap-southeast-2b"
+          - "kubernetes.io/cluster/dlp-secure-transfer" = "shared"
+          - "kubernetes.io/role/elb"                    = "1"
+        } -> null
+      - tags_all                                       = {
+          - "Ephemeral"                                 = "true"
+          - "ManagedBy"                                 = "terraform"
+          - "Name"                                      = "dlp-secure-transfer-public-ap-southeast-2b"
+          - "Owner"                                     = "alvieirvansyah"
+          - "Project"                                   = "dlp-secure-transfer"
+          - "kubernetes.io/cluster/dlp-secure-transfer" = "shared"
+          - "kubernetes.io/role/elb"                    = "1"
+        } -> null
+      - vpc_id                                         = "vpc-084b975c4096e2447" -> null
+        # (5 unchanged attributes hidden)
+    }
+
+  # aws_vpc.main will be destroyed
+  - resource "aws_vpc" "main" {
+      - arn                                  = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:vpc/vpc-084b975c4096e2447" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.20.0.0/16" -> null
+      - default_network_acl_id               = "acl-07f2bbc47527110d0" -> null
+      - default_route_table_id               = "rtb-00fcacd559a328897" -> null
+      - default_security_group_id            = "sg-0cf4d7f49480fade7" -> null
+      - dhcp_options_id                      = "dopt-0b514e1a4de6fc40c" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-084b975c4096e2447" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-00fcacd559a328897" -> null
+      - network_firewall_association         = [] -> null
+      - owner_id                             = "<ACCOUNT_ID>" -> null
+      - region                               = "ap-southeast-2" -> null
+      - tags                                 = {
+          - "Name" = "dlp-secure-transfer"
+        } -> null
+      - tags_all                             = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "dlp-secure-transfer"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_vpc_security_group_ingress_rule.db_from_eks will be destroyed
+  - resource "aws_vpc_security_group_ingress_rule" "db_from_eks" {
+      - arn                          = "arn:aws:ec2:ap-southeast-2:<ACCOUNT_ID>:security-group-rule/sgr-0b5ee2bd2ef088241" -> null
+      - description                  = "app tier" -> null
+      - from_port                    = 5432 -> null
+      - id                           = "sgr-0b5ee2bd2ef088241" -> null
+      - ip_protocol                  = "tcp" -> null
+      - referenced_security_group_id = "sg-0bf3dfe58fe0c2a74" -> null
+      - region                       = "ap-southeast-2" -> null
+      - security_group_id            = "sg-06b1569bbd7b63e3d" -> null
+      - security_group_rule_id       = "sgr-0b5ee2bd2ef088241" -> null
+      - tags_all                     = {
+          - "Ephemeral" = "true"
+          - "ManagedBy" = "terraform"
+          - "Owner"     = "alvieirvansyah"
+          - "Project"   = "dlp-secure-transfer"
+        } -> null
+      - to_port                      = 5432 -> null
+    }
+
+  # random_password.db will be destroyed
+  - resource "random_password" "<REDACTED>" {
+      - bcrypt_hash = (sensitive value) -> null
+      - id          = "none" -> null
+      - length      = 24 -> null
+      - lower       = true -> null
+      - min_lower   = 0 -> null
+      - min_numeric = 0 -> null
+      - min_special = 0 -> null
+      - min_upper   = 0 -> null
+      - number      = true -> null
+      - numeric     = true -> null
+      - result      = (sensitive value) -> null
+      - special     = false -> null
+      - upper       = true -> null
+    }
+
+Plan: 0 to add, 0 to change, 42 to destroy.
+
+Changes to Outputs:
+  - bucket       = "dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2" -> null
+  - cluster_name = "dlp-secure-transfer" -> null
+  - db_password  = <REDACTED> value) -> null
+  - dlq_url      = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq" -> null
+  - ecr_api      = "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/api" -> null
+  - ecr_worker   = "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/dlp-secure-transfer/worker" -> null
+  - kms_key_arn  = "arn:aws:kms:ap-southeast-2:<ACCOUNT_ID>:key/b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+  - kms_key_id   = "b33611c2-0de2-44b0-b017-45eb01546e0d" -> null
+  - log_group    = "/aws/eks/dlp-secure-transfer/cluster" -> null
+  - queue_name   = "dlp-secure-transfer-scan" -> null
+  - queue_url    = "https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan" -> null
+  - rds_address  = "dlp-secure-transfer.c3qm82siib5v.ap-southeast-2.rds.amazonaws.com" -> null
+  - region       = "ap-southeast-2" -> null
+aws_iam_role_policy.workload["api"]: Destroying... [id=dlp-secure-transfer-api:access]
+aws_s3_bucket_policy.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_ecr_repository.repo["worker"]: Destroying... [id=dlp-secure-transfer/worker]
+aws_kms_alias.main: Destroying... [id=alias/dlp-secure-transfer]
+aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0973f2029613c9f94]
+aws_s3_bucket_server_side_encryption_configuration.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_eks_access_policy_association.deployer: Destroying... [id=dlp-secure-transfer#arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+aws_s3_bucket_cors_configuration.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_vpc_security_group_ingress_rule.db_from_eks: Destroying... [id=sgr-0b5ee2bd2ef088241]
+aws_db_instance.main: Destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4]
+aws_iam_role_policy.workload["api"]: Destruction complete after 1s
+aws_eks_pod_identity_association.workload["worker"]: Destroying... [id=a-xb6bp3z3bykvlsabh]
+aws_kms_alias.main: Destruction complete after 1s
+aws_iam_role_policy.workload["worker"]: Destroying... [id=dlp-secure-transfer-worker:access]
+aws_eks_access_policy_association.deployer: Destruction complete after 1s
+aws_eks_pod_identity_association.workload["api"]: Destroying... [id=a-x1lnycvqgmn8watvu]
+aws_s3_bucket_cors_configuration.transfers: Destruction complete after 1s
+aws_route_table_association.public[1]: Destroying... [id=rtbassoc-05efab35e19a54a17]
+aws_iam_role_policy.workload["worker"]: Destruction complete after 0s
+aws_ecr_repository.repo["api"]: Destroying... [id=dlp-secure-transfer/api]
+aws_s3_bucket_server_side_encryption_configuration.transfers: Destruction complete after 1s
+aws_s3_bucket_versioning.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_vpc_security_group_ingress_rule.db_from_eks: Destruction complete after 1s
+aws_eks_access_entry.deployer: Destroying... [id=dlp-secure-transfer:arn:aws:iam::<ACCOUNT_ID>:user/dlp-secure-transfer-deployer]
+aws_eks_pod_identity_association.workload["worker"]: Destruction complete after 1s
+aws_route_table_association.public[0]: Destruction complete after 2s
+aws_eks_pod_identity_association.workload["api"]: Destruction complete after 1s
+aws_eks_addon.pod_identity: Destroying... [id=dlp-secure-transfer:eks-pod-identity-agent]
+aws_iam_role.workload["worker"]: Destroying... [id=dlp-secure-transfer-worker]
+aws_iam_role.workload["api"]: Destroying... [id=dlp-secure-transfer-api]
+aws_s3_bucket_versioning.transfers: Destruction complete after 1s
+aws_s3_bucket_policy.transfers: Destruction complete after 2s
+aws_s3_bucket_public_access_block.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_ecr_repository.repo["worker"]: Destruction complete after 2s
+aws_eks_access_entry.deployer: Destruction complete after 1s
+aws_route_table_association.public[1]: Destruction complete after 1s
+aws_route_table.public: Destroying... [id=rtb-0ed3425f0c7699f8f]
+aws_ecr_repository.repo["api"]: Destruction complete after 2s
+aws_s3_bucket_public_access_block.transfers: Destruction complete after 1s
+aws_iam_role.workload["api"]: Destruction complete after 1s
+aws_iam_role.workload["worker"]: Destruction complete after 1s
+aws_sqs_queue.scan: Destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan]
+aws_s3_bucket.transfers: Destroying... [id=dlp-secure-transfer-<ACCOUNT_ID>-ap-southeast-2]
+aws_eks_addon.pod_identity: Destruction complete after 2s
+aws_eks_node_group.main: Destroying... [id=dlp-secure-transfer:spot]
+aws_route_table.public: Destruction complete after 2s
+aws_internet_gateway.main: Destroying... [id=igw-<ACCOUNT_ID>ca47e]
+aws_s3_bucket.transfers: Destruction complete after 1s
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 00m10s elapsed]
+aws_sqs_queue.scan: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan, 00m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 00m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 00m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 00m20s elapsed]
+aws_sqs_queue.scan: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan, 00m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 00m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 00m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 00m30s elapsed]
+aws_sqs_queue.scan: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan, 00m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 00m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 00m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 00m40s elapsed]
+aws_sqs_queue.scan: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan, 00m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 00m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 00m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 00m50s elapsed]
+aws_sqs_queue.scan: Destruction complete after 50s
+aws_sqs_queue.dlq: Destroying... [id=https://sqs.ap-southeast-2.amazonaws.com/<ACCOUNT_ID>/dlp-secure-transfer-scan-dlq]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 00m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 00m50s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m00s elapsed]
+aws_sqs_queue.dlq: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.co...241212078/dlp-secure-transfer-scan-dlq, 00m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m00s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m10s elapsed]
+aws_sqs_queue.dlq: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.co...241212078/dlp-secure-transfer-scan-dlq, 00m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m10s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m20s elapsed]
+aws_sqs_queue.dlq: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.co...241212078/dlp-secure-transfer-scan-dlq, 00m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m20s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m30s elapsed]
+aws_sqs_queue.dlq: Still destroying... [id=https://sqs.ap-southeast-2.amazonaws.co...241212078/dlp-secure-transfer-scan-dlq, 00m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m30s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m40s elapsed]
+aws_sqs_queue.dlq: Destruction complete after 48s
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m40s elapsed]
+aws_db_instance.main: Still destroying... [id=db-7CJ5BSQZ6HYIMCTND47KQJZFJ4, 01m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 01m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 01m50s elapsed]
+aws_db_instance.main: Destruction complete after 1m55s
+aws_db_subnet_group.main: Destroying... [id=dlp-secure-transfer]
+aws_kms_key.main: Destroying... [id=b33611c2-0de2-44b0-b017-45eb01546e0d]
+aws_security_group.db: Destroying... [id=sg-06b1569bbd7b63e3d]
+random_password.db: Destroying... [id=none]
+random_password.db: Destruction complete after 0s
+aws_db_subnet_group.main: Destruction complete after 1s
+aws_kms_key.main: Destruction complete after 2s
+aws_security_group.db: Destruction complete after 3s
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 02m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 02m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 03m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 03m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 04m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 04m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 05m50s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 05m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m00s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 06m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m10s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 06m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m20s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 06m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m30s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 06m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m40s elapsed]
+aws_internet_gateway.main: Still destroying... [id=igw-<ACCOUNT_ID>ca47e, 06m40s elapsed]
+aws_internet_gateway.main: Destruction complete after 6m42s
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 06m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m10s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m20s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m30s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m40s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 07m50s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 08m00s elapsed]
+aws_eks_node_group.main: Still destroying... [id=dlp-secure-transfer:spot, 08m10s elapsed]
+aws_eks_node_group.main: Destruction complete after 8m20s
+aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Destroying... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"]: Destroying... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Destroying... [id=dlp-secure-transfer-eks-node/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+aws_eks_cluster.main: Destroying... [id=dlp-secure-transfer]
+aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Destruction complete after 1s
+aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"]: Destruction complete after 1s
+aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Destruction complete after 1s
+aws_iam_role.node: Destroying... [id=dlp-secure-transfer-eks-node]
+aws_iam_role.node: Destruction complete after 1s
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 00m10s elapsed]
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 00m20s elapsed]
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 00m30s elapsed]
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 00m40s elapsed]
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 00m50s elapsed]
+aws_eks_cluster.main: Still destroying... [id=dlp-secure-transfer, 01m00s elapsed]
+aws_eks_cluster.main: Destruction complete after 1m9s
+aws_iam_role_policy_attachment.cluster: Destroying... [id=dlp-secure-transfer-eks-cluster/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+aws_cloudwatch_log_group.eks: Destroying... [id=/aws/eks/dlp-secure-transfer/cluster]
+aws_subnet.public[1]: Destroying... [id=subnet-0175acb8782aa3e39]
+aws_subnet.public[0]: Destroying... [id=subnet-012d<ACCOUNT_ID>9]
+aws_iam_role_policy_attachment.cluster: Destruction complete after 1s
+aws_iam_role.cluster: Destroying... [id=dlp-secure-transfer-eks-cluster]
+aws_cloudwatch_log_group.eks: Destruction complete after 2s
+aws_iam_role.cluster: Destruction complete after 1s
+aws_subnet.public[1]: Destruction complete after 2s
+aws_subnet.public[0]: Destruction complete after 2s
+aws_vpc.main: Destroying... [id=vpc-084b975c4096e2447]
+aws_vpc.main: Destruction complete after 2s
+
+Destroy complete! Resources: 42 destroyed.

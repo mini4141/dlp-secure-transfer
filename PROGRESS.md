@@ -6,8 +6,8 @@ Resume from the first unticked item. Updated at the end of each step.
 - [x] Phase 0: scaffold
 - [x] Phase 1: local (tests green, CI green, proof index complete)
 - [x] Phase 2: AWS showcase
-- [ ] Phase 3: destroy + verify-destroyed
-- [ ] Phase 4: write-up (docs/PORTFOLIO.md)
+- [x] Phase 3: destroy + verify-destroyed
+- [x] Phase 4: write-up (docs/PORTFOLIO.md)
 
 ## Requirement coverage matrix (SPECS §2)
 - [x] New features with Python + web technologies: FastAPI + Jinja/htmx app (screenshots)
@@ -35,18 +35,18 @@ Resume from the first unticked item. Updated at the end of each step.
 - [x] tests/playwright-eks/
 
 ## Phase 3 checklist (SPECS §11)
-- [ ] destroy.sh run (ArgoCD app + LB deleted, bucket emptied, terraform destroy)
-- [ ] verify-destroyed.sh: no EKS, RDS, SQS, S3, ELB; KMS pending deletion
-- [ ] proof/phase3-destroy/verify-destroyed.txt
+- [x] destroy.sh run (ArgoCD app + LB deleted, bucket emptied, terraform destroy)
+- [x] verify-destroyed.sh: no EKS, RDS, SQS, S3, ELB; KMS pending deletion
+- [x] proof/phase3-destroy/verify-destroyed.txt
 
 ## Phase 4 checklist
-- [ ] docs/PORTFOLIO.md (problem, Mermaid diagram, stack table, screenshots, hard parts, cost, reproduce)
-- [ ] README.md current, docs/AI_USAGE.md written
-- [ ] everything committed and pushed
+- [x] docs/PORTFOLIO.md (problem, Mermaid diagram, stack table, screenshots, hard parts, cost, reproduce)
+- [x] README.md current, docs/AI_USAGE.md written
+- [x] everything committed and pushed
 
 ## Definition of done (CLAUDE.md §12)
-- [ ] every stack item in §2 used in running code
-- [ ] Phase 1 proof complete, tests green locally and in CI
-- [ ] Phase 2 proof complete
-- [ ] Phase 3 nothing billable left
-- [ ] PORTFOLIO.md + README.md written, pushed
+- [x] every stack item in §2 used in running code
+- [x] Phase 1 proof complete, tests green locally and in CI
+- [x] Phase 2 proof complete
+- [x] Phase 3 nothing billable left
+- [x] PORTFOLIO.md + README.md written, pushed
