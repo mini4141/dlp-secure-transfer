@@ -1,0 +1,30 @@
+# secrets / env
+.env
+.local/
+*.pem
+*.key
+kubeconfig*
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+# node
+node_modules/
+e2e/test-results/
+e2e/playwright-report/
+# go
+worker/bin/
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+tfplan
+!.terraform.lock.hcl
+# editors / os
+.idea/
+.vscode/
+.DS_Store
