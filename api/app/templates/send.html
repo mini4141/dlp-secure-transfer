@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Send files securely</h1>
+  <form id="send-form">
+    <label>Recipients (comma separated) <input name="recipients" placeholder="partner@example.org" required></label>
+    <label>Message <textarea name="message" rows="2"></textarea></label>
+    <div class="row">
+      <label>Expires in <select name="expires_days">{% for d in range(1, 8) %}<option value="{{ d }}" {{ "selected" if d == 3 }}>{{ d }} day{{ "s" if d > 1 }}</option>{% endfor %}</select></label>
+      <label>Link password <input name="password" type="password" minlength="6" required></label>
+      <label>Max downloads <input name="max_downloads" type="number" min="1" max="50" value="1"></label>
+    </div>
+    <label>Files (up to 5) <input name="files" type="file" multiple required></label>
+    <p class="muted">Files upload directly to encrypted storage, then are scanned for personal data before release.</p>
+    <button class="primary" id="send-btn">Create transfer</button>
+    <p id="send-status" class="muted" role="status"></p>
+  </form>
+</section>
+<script src="/static/send.js"></script>
+{% endblock %}

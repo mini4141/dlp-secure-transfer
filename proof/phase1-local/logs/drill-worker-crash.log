@@ -1,0 +1,33 @@
+== 1. start a slow worker (20 s scan), queue visibility timeout is 15 s
+ Container dlp-worker-1 Recreate 
+ Container dlp-worker-1 Recreated 
+ Container dlp-worker-1 Starting 
+ Container dlp-worker-1 Started 
+== 2. send a transfer
+transfer id: 3
+== 3. wait until the worker is mid-scan, then kill -9 it
+ Container dlp-worker-1 Killing 
+ Container dlp-worker-1 Killed 
+worker killed at 20:59:47 while scanning transfer 3
+transfer status now: scanning
+== 4. restart the worker (no delay); SQS makes the message visible again
+ Container dlp-worker-1 Recreate 
+ Container dlp-worker-1 Recreated 
+ Container dlp-worker-1 Starting 
+ Container dlp-worker-1 Started 
+transfer status after recovery: pending_approval
+== 5. evidence
+-- worker log (receive counts, no raw PII):
+worker-1  | {"level":"INFO","msg":"scan received","service":"dlp-worker","scan_id":"66da31cce1b44c00bcffd5b1142bcaab","file_id":3,"receive_count":"2"}
+worker-1  | {"level":"INFO","msg":"scan completed","service":"dlp-worker","scan_id":"66da31cce1b44c00bcffd5b1142bcaab","file_id":3,"status":"findings","findings":{"card":3,"email":3,"phone":3}}
+-- findings rows for this transfer (one row per type, none duplicated):
+card|3
+email|3
+phone|3
+-- scan.completed audit rows for this transfer (exactly 1 expected):
+1
+DRILL PASSED
+ Container dlp-worker-1 Recreate 
+ Container dlp-worker-1 Recreated 
+ Container dlp-worker-1 Starting 
+ Container dlp-worker-1 Started 

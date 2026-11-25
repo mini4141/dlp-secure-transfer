@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Transfers</h1>
+  <table>
+    <thead><tr><th>#</th><th>Recipients</th><th>Files</th><th>Status</th><th>Downloads</th><th>Expires</th></tr></thead>
+    <tbody hx-get="/transfers/rows" hx-trigger="every 3s" hx-swap="innerHTML">{% include "_transfer_rows.html" %}</tbody>
+  </table>
+</section>
+{% endblock %}

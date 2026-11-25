@@ -1,0 +1,22 @@
+# EKS: real S3/SQS through EKS Pod Identity (no static credentials), RDS PostgreSQL, NLB.
+# Injected by scripts/deploy.sh as ArgoCD parameters (not committed):
+#   image.api.repository/tag, image.worker.repository/tag, db.host,
+#   config.bucket, config.queueName, secrets.*
+image:
+  api: {pullPolicy: IfNotPresent}
+  worker: {pullPolicy: IfNotPresent}
+
+api:
+  service:
+    type: LoadBalancer
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-type: nlb
+      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+
+config:
+  region: ap-southeast-2
+  awsEndpointUrl: ""
+  bootstrapAws: false
+
+db:
+  ssl: require

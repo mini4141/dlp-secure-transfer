@@ -1,0 +1,15 @@
+<p>Status: <span class="badge {{ t.status }}" id="status">{{ labels[t.status] }}</span>
+  &middot; Downloads {{ t.download_count }} / {{ t.max_downloads }} &middot; Recipients: {{ t.recipients }}</p>
+<table>
+  <thead><tr><th>File</th><th>Size</th><th>DLP scan</th></tr></thead>
+  <tbody>
+  {% for f in t.files %}
+  <tr><td>{{ f.filename }}</td><td>{{ f.size }} B</td>
+      <td><span class="badge scan-{{ f.scan_status }}">{{ f.scan_status }}</span>
+      {% for fi in f.findings %}<span class="chip">{{ fi.type }} &times; {{ fi.count }}</span>{% endfor %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if t.status == "pending_approval" %}<p class="muted">Personal data was found. An approver must review this transfer before the link works.</p>{% endif %}
+{% if t.status == "rejected" %}<p class="error">Rejected by the approver.</p>{% endif %}
+<p>Share link: <code id="link">{{ link }}</code> <span class="muted">(password is the one you set)</span></p>

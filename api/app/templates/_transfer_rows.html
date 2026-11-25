@@ -1,0 +1,10 @@
+{% for t in transfers %}
+<tr>
+  <td><a href="/transfers/{{ t.id }}">{{ t.id }}</a></td>
+  <td>{{ t.recipients }}</td>
+  <td>{{ t.files | length }}</td>
+  <td><span class="badge {{ t.status }}">{{ labels[t.status] }}</span></td>
+  <td>{{ t.download_count }} / {{ t.max_downloads }}</td>
+  <td>{{ t.expires_at.strftime("%Y-%m-%d %H:%M") }} UTC</td>
+</tr>
+{% else %}<tr><td colspan="6" class="muted">No transfers yet.</td></tr>{% endfor %}

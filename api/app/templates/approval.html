@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Review transfer #{{ t.id }} <span class="badge {{ t.status }}">{{ labels[t.status] }}</span></h1>
+  <p>From {{ t.sender.email }} to {{ t.recipients }}. {% if t.message %}Message: &ldquo;{{ t.message }}&rdquo;{% endif %}</p>
+  {% for f in t.files %}
+  <h2>{{ f.filename }} <span class="badge scan-{{ f.scan_status }}">{{ f.scan_status }}</span></h2>
+  {% if f.findings %}
+  <table id="findings-{{ f.id }}">
+    <thead><tr><th>Type</th><th>Count</th><th>Obfuscated samples (line)</th></tr></thead>
+    <tbody>{% for fi in f.findings %}
+      <tr><td>{{ fi.type }}</td><td>{{ fi.count }}</td>
+          <td>{% for s in fi.samples %}<code>{{ s.text }}</code> <span class="muted">L{{ s.line }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+  {% elif f.scan_status == "unscannable" %}<p class="muted">This file type cannot be scanned and needs a manual decision.</p>
+  {% else %}<p class="muted">No personal data found.</p>{% endif %}
+  {% if previews.get(f.id) %}<h3>Redacted preview</h3><pre class="preview" id="preview-{{ f.id }}">{{ previews[f.id] }}</pre>{% endif %}
+  {% endfor %}
+  {% if t.status == "pending_approval" %}
+  <form method="post" action="/approvals/{{ t.id }}/decide" class="decide">
+    <label>Reason (required to reject) <input name="reason"></label>
+    <button class="primary" name="decision" value="redacted">Approve redacted</button>
+    <button name="decision" value="original">Approve original</button>
+    <button class="danger" name="decision" value="reject">Reject</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

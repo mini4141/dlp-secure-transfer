@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Approval queue</h1>
+  <table>
+    <thead><tr><th>#</th><th>Sender</th><th>Files</th><th>Findings</th><th></th></tr></thead>
+    <tbody>
+    {% for t in transfers %}
+    <tr><td>{{ t.id }}</td><td>{{ t.sender.email }}</td><td>{{ t.files | length }}</td>
+        <td>{% for f in t.files %}{% for fi in f.findings %}<span class="chip">{{ fi.type }} &times; {{ fi.count }}</span>{% endfor %}{% endfor %}</td>
+        <td><a class="btn" href="/approvals/{{ t.id }}">Review</a></td></tr>
+    {% else %}<tr><td colspan="5" class="muted">Nothing waiting for approval.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

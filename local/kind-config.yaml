@@ -1,0 +1,8 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: dlp
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - {containerPort: 30080, hostPort: 28000, protocol: TCP}   # API (NodePort)
+      - {containerPort: 30500, hostPort: 25000, protocol: TCP}   # moto S3/SQS (presigned URLs from the browser)

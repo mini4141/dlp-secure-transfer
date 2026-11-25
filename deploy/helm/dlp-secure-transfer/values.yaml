@@ -1,0 +1,62 @@
+# Defaults. Environment specifics live in values-kind.yaml / values-eks.yaml;
+# account-specific values (ECR URLs, RDS endpoint, secrets) are injected by scripts/deploy.sh
+# as ArgoCD Helm parameters and are never committed.
+
+image:
+  api: {repository: dlp-api, tag: dev, pullPolicy: IfNotPresent}
+  worker: {repository: dlp-worker, tag: dev, pullPolicy: IfNotPresent}
+
+api:
+  replicas: 2
+  service:
+    type: ClusterIP
+    nodePort: null
+    annotations: {}
+  resources:
+    requests: {cpu: 100m, memory: 192Mi}
+    limits: {memory: 384Mi}
+
+worker:
+  replicas: 1
+  resources:
+    requests: {cpu: 50m, memory: 64Mi}
+    limits: {memory: 256Mi}
+
+config:
+  region: ap-southeast-2
+  bucket: dlp-transfers
+  queueName: dlp-scan
+  awsEndpointUrl: ""        # moto only; empty in AWS (real S3/SQS via Pod Identity)
+  s3PublicEndpointUrl: ""   # endpoint browsers use for presigned URLs (moto only)
+  bootstrapAws: false       # create bucket/queues (moto only; Terraform owns them in AWS)
+  seedOnStart: true
+  cookieSecure: false
+  scanDelaySeconds: 0
+  otlpEndpoint: ""
+
+db:
+  host: ""
+  port: 5432
+  name: dlp
+  ownerUser: dlp
+  appUser: dlp_app
+  ssl: ""                   # "require" for RDS
+
+secrets:                    # dev defaults only; real values are injected
+  dbOwnerPassword: dlp
+  dbAppPassword: dlp_app
+  jwtSecret: dev-only-jwt-secret-change-me-0123456789
+  scanHmacSecret: dev-only-hmac-secret-change-me
+  seedPassword: demo-password
+  awsAccessKeyId: ""        # only for moto
+  awsSecretAccessKey: ""
+
+serviceAccount:
+  create: true
+
+localDeps:                  # in-cluster postgres + moto (kind only)
+  enabled: false
+  motoNodePort: null
+
+serviceMonitor:
+  enabled: false

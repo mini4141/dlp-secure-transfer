@@ -1,0 +1,25 @@
+# kind: images are loaded with `kind load docker-image`; postgres and moto run in-cluster.
+image:
+  api: {repository: dlp-api, tag: dev, pullPolicy: IfNotPresent}
+  worker: {repository: dlp-worker, tag: dev, pullPolicy: IfNotPresent}
+
+api:
+  service:
+    type: NodePort
+    nodePort: 30080
+
+config:
+  awsEndpointUrl: http://dlp-secure-transfer-moto:5000
+  s3PublicEndpointUrl: http://localhost:25000
+  bootstrapAws: true
+
+db:
+  host: dlp-secure-transfer-postgres
+
+secrets:
+  awsAccessKeyId: test
+  awsSecretAccessKey: test
+
+localDeps:
+  enabled: true
+  motoNodePort: 30500

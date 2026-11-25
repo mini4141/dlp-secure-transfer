@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Secure download{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <h1>Secure download</h1>
+  {% if state == "blocked" %}
+    <p class="error big" id="msg">{{ message }}</p>
+  {% elif state == "password" %}
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <p>Enter the password the sender gave you.</p>
+    <form method="post" action="/t/{{ token }}"><label>Password <input name="password" type="password" required autofocus></label><button class="primary">Unlock</button></form>
+  {% else %}
+    <p class="muted">{{ remaining }} download(s) left. Links to files expire after 60 seconds.</p>
+    <table><tbody>
+    {% for f in transfer.files %}<tr><td>{{ f.filename }}</td><td>{{ f.size }} B</td><td><a class="btn" href="/t/{{ token }}/download/{{ f.id }}">Download</a></td></tr>{% endfor %}
+    </tbody></table>
+    {% if transfer.release_variant == "redacted" %}<p class="muted">Personal data has been redacted from these files.</p>{% endif %}
+  {% endif %}
+</section>
+{% endblock %}

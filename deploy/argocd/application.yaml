@@ -1,0 +1,30 @@
+# Rendered by scripts/render-app.sh (never applied as-is): __PARAMETERS__ is replaced with
+# account-specific Helm parameters (ECR URLs, RDS endpoint, secrets) that are not committed.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dlp-secure-transfer
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mini4141/dlp-secure-transfer.git
+    targetRevision: __REVISION__
+    path: deploy/helm/dlp-secure-transfer
+    helm:
+      releaseName: dlp-secure-transfer
+      valueFiles:
+        - __VALUES_FILE__
+      parameters:
+__PARAMETERS__
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dlp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

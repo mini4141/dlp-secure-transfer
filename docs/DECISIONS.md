@@ -14,3 +14,5 @@ One line each: date, decision, reason.
 - 2026-11-26: CSRF protection relies on SameSite=Lax cookies and JSON/same-origin forms; no token. Reason: showcase scope.
 - 2026-11-26: htmx is vendored from the npm package `htmx.org` into `api/app/static/`. Reason: no CDN dependency at runtime.
 - 2026-11-26: Link download counter counts every file download (not whole transfers). Reason: simplest reading of "download limit".
+- 2026-11-26: Worker builds with Go 1.26 (`golang:1.26-alpine`), not 1.25: current releases of otel/prometheus/aws-sdk require go >= 1.26. Reason: latest deps; pinning old ones is worse.
+- 2026-11-26: Local compose publishes on non-default host ports (postgres 15432, moto 15000, api 18000, worker 19090, jaeger UI 26686). Reason: another stack on this PC already owns 5432/9090/16686/4318; mine must not collide with or touch it.

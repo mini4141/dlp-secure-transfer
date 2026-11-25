@@ -1,0 +1,33 @@
+# Runs `alembic upgrade head` as the DB owner before the app pods start (ArgoCD Sync hook, wave -1).
+# It also creates the restricted dlp_app role and the append-only grants on audit_events.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "dlp.fullname" . }}-migrate
+  labels: {{- include "dlp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: migrations
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  backoffLimit: 10
+  ttlSecondsAfterFinished: 600
+  template:
+    metadata:
+      labels:
+        {{- include "dlp.selector" . | nindent 8 }}
+        app.kubernetes.io/component: migrations
+    spec:
+      restartPolicy: OnFailure
+      {{- include "dlp.podSecurity" . | nindent 6 }}
+      containers:
+        - name: migrate
+          image: "{{ .Values.image.api.repository }}:{{ .Values.image.api.tag }}"
+          imagePullPolicy: {{ .Values.image.api.pullPolicy }}
+          command: ["alembic", "upgrade", "head"]
+          {{- include "dlp.containerSecurity" . | nindent 10 }}
+          envFrom:
+            - secretRef: {name: {{ include "dlp.secretName" . }}}
+          resources:
+            requests: {cpu: 50m, memory: 128Mi}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Dashboard <span class="muted">last 24 h</span></h1>
+  <div class="stats">
+    <div><h3>Transfers by status</h3>{% for s, n in by_status %}<p><span class="badge {{ s }}">{{ labels[s] }}</span> {{ n }}</p>{% else %}<p class="muted">none</p>{% endfor %}</div>
+    <div><h3>Findings by type</h3>{% for ty, n in by_type %}<p><span class="chip">{{ ty }}</span> {{ n }}</p>{% else %}<p class="muted">none</p>{% endfor %}</div>
+    <div><h3>Audit events</h3><p class="big">{{ events_24h }}</p></div>
+  </div>
+</section>
+<section class="card">
+  <h1>Audit log</h1>
+  <form method="get" action="/admin" class="row filters">
+    <label>Action prefix <input name="action" value="{{ action }}" placeholder="download"></label>
+    <label>Transfer id <input name="transfer_id" value="{{ transfer_id }}" size="6"></label>
+    <button>Filter</button>
+    <a class="btn" href="/api/audit?format=csv{% if action %}&action={{ action }}{% endif %}{% if transfer_id %}&transfer_id={{ transfer_id }}{% endif %}">Export CSV</a>
+  </form>
+  <table id="audit">
+    <thead><tr><th>Time (UTC)</th><th>Actor</th><th>Action</th><th>Transfer</th><th>IP</th></tr></thead>
+    <tbody>{% for r in rows %}<tr><td>{{ r.at.strftime("%Y-%m-%d %H:%M:%S") }}</td><td>{{ r.actor }}</td><td><code>{{ r.action }}</code></td><td>{{ r.transfer_id or "" }}</td><td>{{ r.ip }}</td></tr>{% endfor %}</tbody>
+  </table>
+</section>
+{% endblock %}

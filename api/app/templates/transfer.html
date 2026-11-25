@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Transfer #{{ t.id }}</h1>
+  <div id="panel" hx-get="/transfers/{{ t.id }}/panel" hx-trigger="every 2s" hx-swap="innerHTML">
+    {% include "_transfer_panel.html" %}
+  </div>
+</section>
+{% endblock %}
