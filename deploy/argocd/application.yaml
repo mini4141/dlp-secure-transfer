@@ -1,4 +1,4 @@
-# Rendered by scripts/render-app.sh (never applied as-is): __PARAMETERS__ is replaced with
+# Rendered by scripts/render-app.sh (never applied as-is): the parameters placeholder below is replaced with
 # account-specific Helm parameters (ECR URLs, RDS endpoint, secrets) that are not committed.
 apiVersion: argoproj.io/v1alpha1
 kind: Application

@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 # Render deploy/argocd/application.yaml to stdout.
 # Usage: render-app.sh <values-file> [name=value ...]   (extra args become Helm parameters)
+# Pure bash on purpose: sed's `r` ordering is unreliable in Git Bash.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 values="$1"; shift
 revision="${TARGET_REVISION:-main}"
-tmp="$(mktemp)"
-trap 'rm -f "$tmp"' EXIT
+
+params=""
 if [ "$#" -eq 0 ]; then
-  sed -e "s#__REVISION__#${revision}#" -e "s#__VALUES_FILE__#${values}#" -e '/parameters:/{n;d}' deploy/argocd/application.yaml | sed 's#      parameters:#      parameters: []#'
-  exit 0
+  params=$'        []\n'
+else
+  for kv in "$@"; do
+    params+="        - name: ${kv%%=*}"$'\n'"          value: \"${kv#*=}\""$'\n'"          forceString: true"$'\n'
+  done
 fi
-for kv in "$@"; do
-  name="${kv%%=*}"; value="${kv#*=}"
-  printf '        - name: %s\n          value: "%s"\n          forceString: true\n' "$name" "$value" >> "$tmp"
-done
-sed -e "s#__REVISION__#${revision}#" -e "s#__VALUES_FILE__#${values}#" -e "/__PARAMETERS__/{r $tmp" -e 'd}' deploy/argocd/application.yaml
+
+while IFS= read -r line || [ -n "$line" ]; do
+  case "$line" in
+    *__PARAMETERS__*) printf '%s' "$params" ;;
+    *) line=${line//__REVISION__/$revision}; line=${line//__VALUES_FILE__/$values}; printf '%s\n' "$line" ;;
+  esac
+done < deploy/argocd/application.yaml
