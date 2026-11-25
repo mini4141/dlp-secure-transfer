@@ -31,8 +31,10 @@ run() {
   for arn in $(aws elbv2 describe-load-balancers --query 'LoadBalancers[].LoadBalancerArn' --output text 2>/dev/null); do
     aws elbv2 describe-tags --resource-arns "$arn" --query "TagDescriptions[].Tags[?Key=='kubernetes.io/cluster/${CLUSTER_NAME}' || (Key=='Project' && Value=='dlp-secure-transfer')]" --output text | grep -q . && n=$((n+1))
   done
-  m=$(aws elb describe-load-balancers --query 'length(LoadBalancerDescriptions)' --output text 2>/dev/null || echo 0)
-  check "no load balancers of this project (elbv2)" "$n"; echo "      (classic ELBs in account: $m, none tagged for this project is verified via tagging API below)"
+  for name in $(aws elb describe-load-balancers --query 'LoadBalancerDescriptions[].LoadBalancerName' --output text 2>/dev/null); do
+    aws elb describe-tags --load-balancer-names "$name" --query "TagDescriptions[].Tags[?Key=='kubernetes.io/cluster/${CLUSTER_NAME}' || (Key=='Project' && Value=='dlp-secure-transfer')]" --output text | grep -q . && n=$((n+1))
+  done
+  check "no load balancers of this project (ELBv2 + classic)" "$n"
 
   echo "-- KMS key must be pending deletion"
   found=0

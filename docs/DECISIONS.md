@@ -21,3 +21,4 @@ One line each: date, decision, reason.
 - 2026-11-26: Cloud login password for the three demo users is random per deployment (`.local/cloud-secrets.env`, gitignored), not the local `demo-password`. Reason: the NLB endpoint is public.
 - 2026-11-26: API image is multi-stage (uv only in the build stage); worker image runs `apk upgrade`. Reason: Trivy flagged uv 0.10.3 (CRITICAL) and alpine openssl; `golang.org/x/net` bumped to 0.63.
 - 2026-11-26: Scripts convert the repo root with `cygpath -m` before passing absolute paths to native Windows tools (uv, node, kubectl). Reason: `MSYS_NO_PATHCONV=1` leaves `/c/...` paths unresolvable for them.
+- 2026-11-26: The public endpoint is a Classic Load Balancer (plain `Service type: LoadBalancer`), not an NLB. Reason: ELBv2 CreateLoadBalancer fails in this AWS account with OperationNotPermitted ("account does not support creating load balancers"); classic ELB creation works. destroy/verify scripts check both ELB APIs.

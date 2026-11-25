@@ -22,9 +22,13 @@ fi
 
 echo "== 2. wait until no load balancer of this cluster remains"
 lb_left() {
-  local n=0 arn
+  local n=0 arn name
   for arn in $(aws elbv2 describe-load-balancers --query 'LoadBalancers[].LoadBalancerArn' --output text 2>/dev/null); do
     aws elbv2 describe-tags --resource-arns "$arn" --query "TagDescriptions[].Tags[?Key=='kubernetes.io/cluster/${CLUSTER_NAME}' || (Key=='Project' && Value=='dlp-secure-transfer')]" --output text 2>/dev/null | grep -q . && n=$((n+1))
+  done
+  # this account only allows classic ELBs (see docs/DECISIONS.md)
+  for name in $(aws elb describe-load-balancers --query 'LoadBalancerDescriptions[].LoadBalancerName' --output text 2>/dev/null); do
+    aws elb describe-tags --load-balancer-names "$name" --query "TagDescriptions[].Tags[?Key=='kubernetes.io/cluster/${CLUSTER_NAME}' || (Key=='Project' && Value=='dlp-secure-transfer')]" --output text 2>/dev/null | grep -q . && n=$((n+1))
   done
   echo "$n"
 }

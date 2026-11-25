@@ -1,4 +1,5 @@
-# EKS: real S3/SQS through EKS Pod Identity (no static credentials), RDS PostgreSQL, NLB.
+# EKS: real S3/SQS through EKS Pod Identity (no static credentials), RDS PostgreSQL, a public load balancer.
+# This account refuses ELBv2 (NLB/ALB) creation, so the Service gets a Classic ELB (see docs/DECISIONS.md).
 # Injected by scripts/deploy.sh as ArgoCD parameters (not committed):
 #   image.api.repository/tag, image.worker.repository/tag, db.host,
 #   config.bucket, config.queueName, secrets.*
@@ -10,8 +11,6 @@ api:
   service:
     type: LoadBalancer
     annotations:
-      service.beta.kubernetes.io/aws-load-balancer-type: nlb
-      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
       service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Project=dlp-secure-transfer,Ephemeral=true,ManagedBy=kubernetes,Owner=alvieirvansyah"
 
 config:
