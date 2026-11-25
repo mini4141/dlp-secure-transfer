@@ -1,0 +1,34 @@
+NAME                                                READY   STATUS    RESTARTS   AGE
+pod/dlp-secure-transfer-api-56b58689b8-sqqvc        1/1     Running   0          11m
+pod/dlp-secure-transfer-api-56b58689b8-z84gx        1/1     Running   0          11m
+pod/dlp-secure-transfer-moto-787d76ddd6-9rbzp       1/1     Running   0          23m
+pod/dlp-secure-transfer-postgres-55c49b98f9-ssc7x   1/1     Running   0          23m
+pod/dlp-secure-transfer-worker-7fc567845b-skfmx     1/1     Running   0          21m
+
+NAME                                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/dlp-secure-transfer-api        NodePort    10.96.208.159   <none>        80:30080/TCP     21m
+service/dlp-secure-transfer-moto       NodePort    10.96.218.161   <none>        5000:30500/TCP   23m
+service/dlp-secure-transfer-postgres   ClusterIP   10.96.241.190   <none>        5432/TCP         23m
+service/dlp-secure-transfer-worker     ClusterIP   10.96.94.83     <none>        9090/TCP         21m
+
+NAME                                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/dlp-secure-transfer-api        2/2     2            2           21m
+deployment.apps/dlp-secure-transfer-moto       1/1     1            1           23m
+deployment.apps/dlp-secure-transfer-postgres   1/1     1            1           23m
+deployment.apps/dlp-secure-transfer-worker     1/1     1            1           21m
+
+NAME                                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/dlp-secure-transfer-api-56b58689b8        2         2         2       21m
+replicaset.apps/dlp-secure-transfer-moto-787d76ddd6       1         1         1       23m
+replicaset.apps/dlp-secure-transfer-postgres-55c49b98f9   1         1         1       23m
+replicaset.apps/dlp-secure-transfer-worker-7fc567845b     1         1         1       21m
+
+NAME                  SYNC STATUS   HEALTH STATUS
+dlp-secure-transfer   Synced        Healthy
+
+NAME                                                READY   STATUS    RESTARTS   AGE
+argocd-application-controller-0                     1/1     Running   0          23m
+argocd-applicationset-controller-76cf476956-xfm6d   1/1     Running   0          23m
+argocd-redis-54f956fc5d-shtkm                       1/1     Running   0          23m
+argocd-repo-server-584c56c5df-v75h4                 1/1     Running   0          23m
+argocd-server-5fddfc6b4f-cfr87                      1/1     Running   0          23m

@@ -1,10 +1,10 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="14.893485">
-<testsuite name="journey.spec.ts" timestamp="2026-11-25T20:58:57.205Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.744" errors="0">
-<testcase name="sender -&gt; approver (redacted) -&gt; recipient download -&gt; limit -&gt; audit" classname="journey.spec.ts" time="9.744">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="20.354557">
+<testsuite name="journey.spec.ts" timestamp="2026-11-25T21:27:55.459Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.403" errors="0">
+<testcase name="sender -&gt; approver (redacted) -&gt; recipient download -&gt; limit -&gt; audit" classname="journey.spec.ts" time="14.403">
 </testcase>
 </testsuite>
-<testsuite name="trace.spec.ts" timestamp="2026-11-25T20:58:57.205Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.173" errors="0">
-<testcase name="trace API -&gt; worker in Jaeger" classname="trace.spec.ts" time="3.173">
+<testsuite name="trace.spec.ts" timestamp="2026-11-25T21:27:55.459Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.638" errors="0">
+<testcase name="trace API -&gt; worker in Jaeger" classname="trace.spec.ts" time="3.638">
 </testcase>
 </testsuite>
 </testsuites>

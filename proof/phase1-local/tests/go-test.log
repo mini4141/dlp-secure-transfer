@@ -1,0 +1,31 @@
+?   	github.com/mini4141/dlp-secure-transfer/worker/cmd/worker	[no test files]
+=== RUN   TestAggregateKeepsOnlyObfuscatedSamples
+--- PASS: TestAggregateKeepsOnlyObfuscatedSamples (0.00s)
+=== RUN   TestSignMatchesHMACSHA256
+--- PASS: TestSignMatchesHMACSHA256 (0.00s)
+PASS
+ok  	github.com/mini4141/dlp-secure-transfer/worker/internal/app	2.571s
+=== RUN   TestCardLuhn
+--- PASS: TestCardLuhn (0.00s)
+=== RUN   TestEmail
+--- PASS: TestEmail (0.00s)
+=== RUN   TestPhone
+--- PASS: TestPhone (0.00s)
+=== RUN   TestMyNumberCheckDigit
+--- PASS: TestMyNumberCheckDigit (0.00s)
+=== RUN   TestIBAN
+--- PASS: TestIBAN (0.00s)
+=== RUN   TestObfuscateAndRedact
+--- PASS: TestObfuscateAndRedact (0.00s)
+PASS
+ok  	github.com/mini4141/dlp-secure-transfer/worker/internal/detect	(cached)
+=== RUN   TestPlainText
+--- PASS: TestPlainText (0.00s)
+=== RUN   TestUnsupported
+--- PASS: TestUnsupported (0.00s)
+=== RUN   TestDocx
+--- PASS: TestDocx (0.00s)
+=== RUN   TestPDF
+--- PASS: TestPDF (0.00s)
+PASS
+ok  	github.com/mini4141/dlp-secure-transfer/worker/internal/extract	1.172s

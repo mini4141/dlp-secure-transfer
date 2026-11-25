@@ -5,9 +5,117 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  scaffold:
+  api:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.6-alpine
+        env: {POSTGRES_USER: dlp, POSTGRES_PASSWORD: dlp, POSTGRES_DB: dlp}
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dlp" --health-interval 3s --health-timeout 3s --health-retries 20
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run pytest -q --junitxml=pytest-junit.xml
+        env:
+          TEST_PG_HOST: localhost:5432
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: pytest-junit, path: api/pytest-junit.xml}
+
+  worker:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: {go-version-file: worker/go.mod}
+      - uses: golangci/golangci-lint-action@v8
+        with: {working-directory: worker}
+      - run: go test -v ./... 2>&1 | tee go-test.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: go-test-log, path: worker/go-test.log}
+
+  integration-e2e:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: test -f PROGRESS.md && test -f docs/DECISIONS.md
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: docker compose -f local/docker-compose.yml up -d --build --wait
+      - name: integration (upload -> SQS -> worker -> findings)
+        run: cd api && uv sync --frozen && uv run pytest tests_integration -q
+      - name: playwright (sender -> approver -> recipient)
+        working-directory: e2e
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          JAEGER_URL=http://localhost:26686 REPORT_DIR=report npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: playwright-report, path: e2e/report}
+      - if: failure()
+        run: docker compose -f local/docker-compose.yml logs --no-color | tail -200
+
+  images:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - {name: api, context: api}
+          - {name: worker, context: worker}
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t dlp-${{ matrix.name }}:ci ${{ matrix.context }}
+      - uses: aquasecurity/trivy-action@0.33.1
+        with:
+          image-ref: dlp-${{ matrix.name }}:ci
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "1"
+
+  helm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - run: |
+          helm lint deploy/helm/dlp-secure-transfer -f deploy/helm/dlp-secure-transfer/values-kind.yaml
+          helm lint deploy/helm/dlp-secure-transfer -f deploy/helm/dlp-secure-transfer/values-eks.yaml \
+            --set image.api.repository=x,image.worker.repository=y,db.host=h
+
+  terraform:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with: {terraform_version: "~1.9"}
+      - run: terraform fmt -check -recursive
+      - run: terraform init -backend=false
+      - run: terraform validate
+
+  api-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: bash scripts/gen-api-docs.sh
+      - uses: actions/upload-artifact@v4
+        with: {name: api-docs, path: docs/api}

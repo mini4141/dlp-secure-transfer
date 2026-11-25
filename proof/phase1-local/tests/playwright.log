@@ -1,0 +1,9 @@
+
+Running 3 tests using 1 worker
+
+  -  1 [chromium] › tests\argocd.spec.ts:13:1 › ArgoCD shows dlp-secure-transfer Synced and Healthy
+  ok 2 [chromium] › tests\journey.spec.ts:43:1 › sender -> approver (redacted) -> recipient download -> limit -> audit (8.8s)
+  ok 3 [chromium] › tests\trace.spec.ts:11:1 › trace API -> worker in Jaeger (3.3s)
+
+  1 skipped
+  2 passed (13.8s)

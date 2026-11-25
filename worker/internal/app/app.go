@@ -183,7 +183,7 @@ func (c *Config) scan(ctx context.Context, msg ScanMessage) (*Result, error) {
 	if err != nil {
 		return nil, fmt.Errorf("get object: %w", err)
 	}
-	defer obj.Body.Close()
+	defer func() { _ = obj.Body.Close() }()
 	text, err := extract.Text(msg.Filename, obj.Body)
 	if err != nil {
 		if errors.Is(err, extract.ErrUnsupported) {
@@ -273,8 +273,8 @@ func (c *Config) post(ctx context.Context, res *Result) error {
 	if err != nil {
 		return fmt.Errorf("post results: %w", err)
 	}
-	defer resp.Body.Close()
-	io.Copy(io.Discard, resp.Body)
+	defer func() { _ = resp.Body.Close() }()
+	_, _ = io.Copy(io.Discard, resp.Body)
 	if resp.StatusCode/100 != 2 {
 		return fmt.Errorf("post results: status %d", resp.StatusCode)
 	}

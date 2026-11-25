@@ -28,8 +28,8 @@ func TestDocx(t *testing.T) {
 	var buf bytes.Buffer
 	zw := zip.NewWriter(&buf)
 	w, _ := zw.Create("word/document.xml")
-	w.Write([]byte(`<w:document xmlns:w="x"><w:body><w:p><w:r><w:t>card 4111 1111 1111 1111</w:t></w:r></w:p></w:body></w:document>`))
-	zw.Close()
+	_, _ = w.Write([]byte(`<w:document xmlns:w="x"><w:body><w:p><w:r><w:t>card 4111 1111 1111 1111</w:t></w:r></w:p></w:body></w:document>`))
+	_ = zw.Close()
 	got, err := Text("f.docx", &buf)
 	if err != nil || !strings.Contains(got, "4111 1111 1111 1111") {
 		t.Fatalf("got %q, %v", got, err)

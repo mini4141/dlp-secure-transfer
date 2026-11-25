@@ -12,6 +12,7 @@ api:
     annotations:
       service.beta.kubernetes.io/aws-load-balancer-type: nlb
       service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+      service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Project=dlp-secure-transfer,Ephemeral=true,ManagedBy=kubernetes,Owner=alvieirvansyah"
 
 config:
   region: ap-southeast-2

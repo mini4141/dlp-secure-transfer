@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.377804">
+<testsuite name="argocd.spec.ts" timestamp="2026-11-25T21:29:20.195Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.696" errors="0">
+<testcase name="ArgoCD shows dlp-secure-transfer Synced and Healthy" classname="argocd.spec.ts" time="6.696">
+</testcase>
+</testsuite>
+</testsuites>

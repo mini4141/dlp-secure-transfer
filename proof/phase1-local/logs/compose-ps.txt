@@ -1,0 +1,6 @@
+NAME             IMAGE                                                                     COMMAND                  SERVICE    CREATED              STATUS                    PORTS
+dlp-api-1        sha256:62d9d2fbadef6a9fc8f5c07d224ae37454b23cded88dbe6a5aa7ca906331c238   "uvicorn app.main:ap…"   api        15 minutes ago       Up 15 minutes (healthy)   0.0.0.0:18000->8000/tcp, [::]:18000->8000/tcp
+dlp-jaeger-1     jaegertracing/all-in-one:1.65.0                                           "/go/bin/all-in-one-…"   jaeger     33 minutes ago       Up 33 minutes             0.0.0.0:26686->16686/tcp, [::]:26686->16686/tcp
+dlp-moto-1       motoserver/moto:5.2.5                                                     "/usr/local/bin/moto…"   moto       33 minutes ago       Up 33 minutes (healthy)   0.0.0.0:15000->5000/tcp, [::]:15000->5000/tcp
+dlp-postgres-1   postgres:17.6-alpine                                                      "docker-entrypoint.s…"   postgres   37 minutes ago       Up 37 minutes (healthy)   0.0.0.0:15432->5432/tcp, [::]:15432->5432/tcp
+dlp-worker-1     sha256:2c10bec3432eb0d2f745612e85a2b3b94dc5f7efa6f9278655177fbf9794f4f6   "/usr/local/bin/work…"   worker     About a minute ago   Up About a minute         0.0.0.0:19090->9090/tcp, [::]:19090->9090/tcp

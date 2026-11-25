@@ -1,0 +1,10 @@
+{"ts":"2026-11-25T21:27:10.007319048Z","level":"INFO","msg":"worker started","service":"dlp-worker","queue":"dlp-scan"}
+{"ts":"2026-11-25T21:27:14.899116954Z","level":"INFO","msg":"scan received","service":"dlp-worker","scan_id":"82dca768d651487583e49392547da378","file_id":10,"receive_count":"1"}
+{"ts":"2026-11-25T21:27:14.912864206Z","level":"INFO","msg":"simulated slow scan","service":"dlp-worker","seconds":2}
+{"ts":"2026-11-25T21:27:17.025841755Z","level":"INFO","msg":"scan completed","service":"dlp-worker","scan_id":"82dca768d651487583e49392547da378","file_id":10,"status":"findings","findings":{"card":3,"email":3,"phone":3}}
+{"ts":"2026-11-25T21:27:28.094757336Z","level":"INFO","msg":"scan received","service":"dlp-worker","scan_id":"a5c79495e99347188503cdabc49c8ce1","file_id":11,"receive_count":"1"}
+{"ts":"2026-11-25T21:27:28.113526919Z","level":"INFO","msg":"simulated slow scan","service":"dlp-worker","seconds":2}
+{"ts":"2026-11-25T21:27:30.185869622Z","level":"INFO","msg":"scan completed","service":"dlp-worker","scan_id":"a5c79495e99347188503cdabc49c8ce1","file_id":11,"status":"findings","findings":{"card":3,"email":3,"phone":3}}
+{"ts":"2026-11-25T21:27:59.166388971Z","level":"INFO","msg":"scan received","service":"dlp-worker","scan_id":"4ab52f6d8e7e4842a4aa49dde72fda4e","file_id":12,"receive_count":"1"}
+{"ts":"2026-11-25T21:27:59.181191343Z","level":"INFO","msg":"simulated slow scan","service":"dlp-worker","seconds":2}
+{"ts":"2026-11-25T21:28:01.265842916Z","level":"INFO","msg":"scan completed","service":"dlp-worker","scan_id":"4ab52f6d8e7e4842a4aa49dde72fda4e","file_id":12,"status":"findings","findings":{"card":3,"email":3,"phone":3}}

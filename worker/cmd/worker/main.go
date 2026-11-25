@@ -71,7 +71,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/metrics", promhttp.Handler())
-	mux.HandleFunc("/healthz", func(w http.ResponseWriter, _ *http.Request) { w.Write([]byte("ok")) })
+	mux.HandleFunc("/healthz", func(w http.ResponseWriter, _ *http.Request) { _, _ = w.Write([]byte("ok")) })
 	srv := &http.Server{Addr: env("METRICS_ADDR", ":9090"), Handler: mux, ReadHeaderTimeout: 5 * time.Second}
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -85,7 +85,7 @@ func main() {
 	}
 	shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
-	srv.Shutdown(shutdownCtx)
+	_ = srv.Shutdown(shutdownCtx)
 	slog.Info("worker stopped")
 }
 
@@ -108,6 +108,6 @@ func initTracing(ctx context.Context) func() {
 	return func() {
 		c, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
-		tp.Shutdown(c)
+		_ = tp.Shutdown(c)
 	}
 }

@@ -1,0 +1,3 @@
+raw card numbers in worker log:  0
+raw emails in worker log:        0
+raw card numbers in api log:     0
